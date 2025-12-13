@@ -21,9 +21,7 @@ export function App() {
         <Header />
 
         <main className="flex flex-1 flex-col p-5">
-          <span className="text-sm text-muted-foreground">
-            Boa tarde, Morty
-          </span>
+          <span className="text-sm text-muted-foreground">Boa tarde, Key</span>
 
           <h1 className="text-2xl font-medium">Dezembro 2025</h1>
 

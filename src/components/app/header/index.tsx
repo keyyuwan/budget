@@ -20,8 +20,8 @@ export function Header() {
             <PlusIcon />
           </Button>
           <Avatar className="size-9">
-            <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
-            <AvatarFallback>CN</AvatarFallback>
+            <AvatarImage src="https://github.com/keyyuwan.png" alt="@shadcn" />
+            <AvatarFallback>KW</AvatarFallback>
           </Avatar>
         </div>
       </div>
