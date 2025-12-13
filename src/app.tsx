@@ -2,9 +2,9 @@ import { Header } from "@/components/app/header";
 import { ThemeProvider } from "@/contexts/theme-provider";
 import {
   ArrowUpDownIcon,
+  BanknoteArrowDownIcon,
+  BanknoteArrowUpIcon,
   ChartPieIcon,
-  CircleArrowDownIcon,
-  CircleArrowUpIcon,
   HouseIcon,
   ShoppingBag,
 } from "lucide-react";
@@ -38,14 +38,14 @@ export function App() {
                 <FinancialSummaryCard
                   title="Entradas"
                   amount={15_500.34}
-                  icon={CircleArrowUpIcon}
+                  icon={BanknoteArrowUpIcon}
                   iconClassName="text-primary"
                   href="/incomes"
                 />
                 <FinancialSummaryCard
                   title="Saídas"
                   amount={10_000.0}
-                  icon={CircleArrowDownIcon}
+                  icon={BanknoteArrowDownIcon}
                   iconClassName="text-destructive"
                   href="/expenses"
                 />
