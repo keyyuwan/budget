@@ -14,7 +14,7 @@ import { Button } from "@/components/ui/button";
 import { DatePicker } from "@/components/ui/date-picker";
 
 export function CreateIncomeTransactionForm() {
-  const [alreadyPaid, setAlreadyPaid] = useState("true");
+  const [alreadyReceived, setAlreadyReceived] = useState("true");
   const [receiptDate, setReceiptDate] = useState<Date | undefined>(new Date());
   const [expectedReceiptDate, setExpectedReceiptDate] = useState<
     Date | undefined
@@ -41,12 +41,12 @@ export function CreateIncomeTransactionForm() {
             </InputGroup>
           </Field>
           <Field>
-            <FieldLabel htmlFor="already-paid">
+            <FieldLabel htmlFor="already-received">
               Esse valor já entrou?
             </FieldLabel>
             <RadioGroup
-              value={alreadyPaid}
-              onValueChange={setAlreadyPaid}
+              value={alreadyReceived}
+              onValueChange={setAlreadyReceived}
               className="mt-2 flex gap-4"
             >
               <div className="flex items-center gap-2">
@@ -59,7 +59,7 @@ export function CreateIncomeTransactionForm() {
               </div>
             </RadioGroup>
           </Field>
-          {alreadyPaid === "true" ? (
+          {alreadyReceived === "true" ? (
             <Field>
               <FieldLabel htmlFor="receipt-date">
                 Data de recebimento

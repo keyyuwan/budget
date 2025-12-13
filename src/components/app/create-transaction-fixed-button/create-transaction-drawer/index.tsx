@@ -11,6 +11,7 @@ import {
   BanknoteArrowUpIcon,
   ReceiptTextIcon,
 } from "lucide-react";
+import { CreateExpenseTransactionForm } from "./create-expense-transaction-form";
 
 const TITLE_MAP: Record<TransactionType, string> = {
   expense: "Nova Saída",
@@ -57,6 +58,7 @@ export function CreateTransactionDrawer({
           <DrawerTitle className="text-left">{title}</DrawerTitle>
         </DrawerHeader>
         {transactionType === "income" && <CreateIncomeTransactionForm />}
+        {transactionType === "expense" && <CreateExpenseTransactionForm />}
       </DrawerContent>
     </Drawer>
   );
