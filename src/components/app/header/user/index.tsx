@@ -17,12 +17,12 @@ export function User() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>
-        <Avatar className="size-9">
+        <Avatar className="size-9 border">
           <AvatarImage src="https://github.com/keyyuwan.png" alt="@shadcn" />
           <AvatarFallback>KW</AvatarFallback>
         </Avatar>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
+      <DropdownMenuContent align="end" sideOffset={8}>
         <DropdownMenuGroup>
           <DropdownMenuItem>
             <UserIcon className="size-4" />
