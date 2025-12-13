@@ -73,13 +73,13 @@ export function NavigationMenu() {
           <NavigationLink icon={ChartPieIcon} label="Investimentos" href="#" />
           <NavigationLink icon={ShoppingBag} label="Não Essenciais" href="#" />
         </nav>
-        <DrawerFooter className="flex flex-col gap-2">
+        <DrawerFooter className="flex flex-col gap-3">
           <span className="text-xs text-muted-foreground">
             Seu feedback é muito importante para nós!
           </span>
           <Button>
             <MessageCircleIcon />
-            Feedback
+            Dar feedback
           </Button>
         </DrawerFooter>
       </DrawerContent>

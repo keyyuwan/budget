@@ -27,7 +27,7 @@ export function App() {
           <h1 className="text-2xl font-medium">Dezembro 2025</h1>
 
           <div className="mt-5 flex flex-col gap-5">
-            <div className="scrollbar-none -mx-5 flex gap-2.5 overflow-x-auto px-5">
+            <div className="scrollbar-none -mx-5 flex gap-2.5 overflow-x-auto px-5 py-2">
               <BillReminderCard />
               <BillReminderCard />
               <BillReminderCard />
@@ -35,7 +35,7 @@ export function App() {
 
             <div className="flex flex-col gap-2">
               <h2 className="text-lg font-medium">Visão Geral</h2>
-              <div className="flex flex-col gap-2.5">
+              <div className="flex flex-col gap-2.5 py-2">
                 <FinancialSummaryCard
                   title="Entradas"
                   amount={15_500.34}
@@ -60,7 +60,7 @@ export function App() {
 
             <div className="flex flex-col gap-2">
               <h2 className="text-lg font-medium">Orçamento</h2>
-              <div className="scrollbar-none -mx-5 flex gap-2.5 overflow-x-auto px-5">
+              <div className="scrollbar-none -mx-5 flex gap-2.5 overflow-x-auto px-5 py-2">
                 <BudgetGroupCard
                   title="Essenciais"
                   pendingAmount={6_000}
