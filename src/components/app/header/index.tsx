@@ -1,7 +1,7 @@
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { ModeToggle } from "@/components/ui/mode-toggle";
 import { MenuIcon, PlusIcon } from "lucide-react";
+import { User } from "./user";
 
 export function Header() {
   return (
@@ -19,10 +19,7 @@ export function Header() {
           <Button variant="outline" size="icon" aria-label="Add transaction">
             <PlusIcon />
           </Button>
-          <Avatar className="size-9">
-            <AvatarImage src="https://github.com/keyyuwan.png" alt="@shadcn" />
-            <AvatarFallback>KW</AvatarFallback>
-          </Avatar>
+          <User />
         </div>
       </div>
     </header>
