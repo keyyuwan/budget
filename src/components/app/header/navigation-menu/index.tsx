@@ -15,21 +15,37 @@ import {
   MessageCircleIcon,
   ReceiptTextIcon,
   ShoppingBag,
+  XIcon,
 } from "lucide-react";
 import { NavigationLink } from "./navigation-link";
 import { Separator } from "@/components/ui/separator";
+import { useState } from "react";
 
 export function NavigationMenu() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  function handleCloseMenu() {
+    setIsOpen(false);
+  }
+
   return (
-    <Drawer direction="left">
+    <Drawer direction="left" open={isOpen} onOpenChange={setIsOpen}>
       <DrawerTrigger asChild>
         <Button variant="outline" size="icon" aria-label="Menu">
           <MenuIcon />
         </Button>
       </DrawerTrigger>
-      <DrawerContent className="max-w-56">
-        <DrawerHeader className="border-b">
+      <DrawerContent className="w-60">
+        <DrawerHeader className="flex flex-row items-center justify-between border-b">
           <span className="text-primary">app logo.</span>
+          <Button
+            variant="ghost"
+            size="icon"
+            aria-label="Close"
+            onClick={handleCloseMenu}
+          >
+            <XIcon />
+          </Button>
         </DrawerHeader>
         <nav className="flex flex-col gap-2 p-4">
           <NavigationLink icon={HouseIcon} label="Início" href="/" isActive />
