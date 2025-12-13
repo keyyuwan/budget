@@ -54,7 +54,10 @@ export function CreateExpenseTransactionForm() {
               <FieldLabel htmlFor="compute-environment-p8w">
                 Essa saída pertence a:
               </FieldLabel>
-              <RadioGroup>
+              <RadioGroup
+                defaultValue="essential"
+                className="grid grid-cols-2 gap-2.5"
+              >
                 <FieldLabel htmlFor="essential">
                   <Field orientation="horizontal">
                     <FieldContent>
@@ -71,7 +74,7 @@ export function CreateExpenseTransactionForm() {
                     <FieldContent>
                       <FieldTitle>Investimentos</FieldTitle>
                       <FieldDescription>
-                        Valores investidos que te darão retorno no futuro.
+                        O que te dará retorno no futuro.
                       </FieldDescription>
                     </FieldContent>
                     <RadioGroupItem value="investments" id="investments" />

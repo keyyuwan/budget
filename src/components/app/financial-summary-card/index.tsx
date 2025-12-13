@@ -27,7 +27,7 @@ export function FinancialSummaryCard({
     <Card className="w-full">
       <CardContent className="flex items-center justify-between">
         <div className="flex items-start gap-4">
-          <Icon className={cn("size-8", iconClassName)} />
+          <Icon className={cn("size-8", iconClassName)} strokeWidth={1.5} />
           <div className="flex flex-col">
             <span className="text-sm text-muted-foreground">{title}</span>
             <span className="text-xl">{currencyAmount}</span>

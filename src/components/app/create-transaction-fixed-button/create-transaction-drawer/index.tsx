@@ -6,17 +6,12 @@ import {
 } from "@/components/ui/drawer";
 import type { TransactionType } from "..";
 import { CreateIncomeTransactionForm } from "./create-income-transaction-form";
-import {
-  BanknoteArrowDownIcon,
-  BanknoteArrowUpIcon,
-  ReceiptTextIcon,
-} from "lucide-react";
+import { BanknoteArrowDownIcon, BanknoteArrowUpIcon } from "lucide-react";
 import { CreateExpenseTransactionForm } from "./create-expense-transaction-form";
 
 const TITLE_MAP: Record<TransactionType, string> = {
   expense: "Nova Saída",
   income: "Nova Entrada",
-  bill: "Nova Conta",
 };
 
 const ICON_MAP: Record<TransactionType, React.ReactNode> = {
@@ -28,11 +23,6 @@ const ICON_MAP: Record<TransactionType, React.ReactNode> = {
   income: (
     <div className="flex size-7.5 items-center justify-center rounded-full bg-primary/10">
       <BanknoteArrowUpIcon className="size-4 text-primary" />
-    </div>
-  ),
-  bill: (
-    <div className="flex size-7.5 items-center justify-center rounded-full bg-sky-700/10">
-      <ReceiptTextIcon className="size-4 text-sky-700" />
     </div>
   ),
 };

@@ -10,13 +10,12 @@ import {
   BanknoteArrowDownIcon,
   BanknoteArrowUpIcon,
   PlusIcon,
-  ReceiptTextIcon,
   XIcon,
 } from "lucide-react";
 import { useState } from "react";
 import { CreateTransactionDrawer } from "./create-transaction-drawer";
 
-export type TransactionType = "expense" | "income" | "bill";
+export type TransactionType = "expense" | "income";
 
 export function CreateTransactionFixedButton() {
   const [isOpen, setIsOpen] = useState(false);
@@ -69,16 +68,6 @@ export function CreateTransactionFixedButton() {
               <BanknoteArrowUpIcon className="size-4 text-primary" />
             </div>
             Nova Entrada
-          </DropdownMenuItem>
-          <DropdownMenuSeparator />
-          <DropdownMenuItem
-            className="p-3"
-            onClick={() => handleTransactionTypeChange("bill")}
-          >
-            <div className="flex size-7.5 items-center justify-center rounded-full bg-sky-700/10">
-              <ReceiptTextIcon className="size-4 text-sky-700" />
-            </div>
-            Nova Conta
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
