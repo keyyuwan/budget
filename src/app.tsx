@@ -11,6 +11,7 @@ import {
 import { FinancialSummaryCard } from "./components/app/financial-summary-card";
 import { BudgetGroupCard } from "./components/app/budget-group-card";
 import { BillReminderCard } from "./components/app/bill-reminder-card";
+import { CreateTransactionFixedButton } from "./components/app/create-transaction-fixed-button";
 
 const STORAGE_KEY = "@budget-ui-theme";
 
@@ -20,7 +21,7 @@ export function App() {
       <div className="flex h-screen flex-col">
         <Header />
 
-        <main className="flex flex-1 flex-col p-5">
+        <main className="relative flex flex-1 flex-col p-5">
           <span className="text-sm text-muted-foreground">Boa tarde, Key</span>
 
           <h1 className="text-2xl font-medium">Dezembro 2025</h1>
@@ -86,6 +87,8 @@ export function App() {
               </div>
             </div>
           </div>
+
+          <CreateTransactionFixedButton />
         </main>
       </div>
     </ThemeProvider>
