@@ -62,6 +62,7 @@ function RouteComponent() {
               title="Essenciais"
               pendingAmount={6_000}
               totalAmount={12_000}
+              href="/essentials"
               icon={HouseIcon}
               iconClassName="text-sky-700"
               iconWrapperClassName="bg-sky-700/10"
@@ -70,6 +71,7 @@ function RouteComponent() {
               title="Investimentos"
               pendingAmount={2_000}
               totalAmount={3_900}
+              href="/investments"
               icon={ChartPieIcon}
               iconClassName="text-emerald-500"
               iconWrapperClassName="bg-emerald-500/10"
@@ -78,6 +80,7 @@ function RouteComponent() {
               title="Não Essenciais"
               pendingAmount={1_000}
               totalAmount={3_900}
+              href="/non-essencials"
               icon={ShoppingBag}
               iconWrapperClassName="bg-zinc-800/10"
             />

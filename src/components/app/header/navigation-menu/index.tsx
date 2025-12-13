@@ -13,7 +13,6 @@ import {
   HouseIcon,
   MenuIcon,
   MessageCircleIcon,
-  ReceiptTextIcon,
   ShoppingBag,
   XIcon,
 } from "lucide-react";
@@ -48,30 +47,47 @@ export function NavigationMenu() {
           </Button>
         </DrawerHeader>
         <nav className="flex flex-col gap-2 p-4">
-          <NavigationLink icon={HouseIcon} label="Início" href="/" isActive />
+          <NavigationLink
+            icon={HouseIcon}
+            label="Início"
+            href="/"
+            onClick={handleCloseMenu}
+          />
           <NavigationLink
             icon={BanknoteArrowUpIcon}
             label="Entradas"
             href="/incomes"
+            onClick={handleCloseMenu}
           />
           <NavigationLink
             icon={BanknoteArrowDownIcon}
             label="Saídas"
             href="/expenses"
-          />
-          <NavigationLink
-            icon={ReceiptTextIcon}
-            label="Contas"
-            href="/incomes"
+            onClick={handleCloseMenu}
           />
         </nav>
         <Separator />
         <nav className="flex flex-col gap-2 p-4">
           <span className="text-sm font-medium">Orçamento</span>
 
-          <NavigationLink icon={HouseIcon} label="Essenciais" href="#" />
-          <NavigationLink icon={ChartPieIcon} label="Investimentos" href="#" />
-          <NavigationLink icon={ShoppingBag} label="Não Essenciais" href="#" />
+          <NavigationLink
+            icon={HouseIcon}
+            label="Essenciais"
+            href="/essentials"
+            onClick={handleCloseMenu}
+          />
+          <NavigationLink
+            icon={ChartPieIcon}
+            label="Investimentos"
+            href="/investments"
+            onClick={handleCloseMenu}
+          />
+          <NavigationLink
+            icon={ShoppingBag}
+            label="Não Essenciais"
+            href="/non-essencials"
+            onClick={handleCloseMenu}
+          />
         </nav>
         <DrawerFooter className="flex flex-col gap-3">
           <span className="text-xs text-muted-foreground">

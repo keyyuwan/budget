@@ -9,8 +9,38 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as NonEssencialsRouteImport } from './routes/non-essencials'
+import { Route as InvestmentsRouteImport } from './routes/investments'
+import { Route as IncomesRouteImport } from './routes/incomes'
+import { Route as ExpensesRouteImport } from './routes/expenses'
+import { Route as EssentialsRouteImport } from './routes/essentials'
 import { Route as IndexRouteImport } from './routes/index'
 
+const NonEssencialsRoute = NonEssencialsRouteImport.update({
+  id: '/non-essencials',
+  path: '/non-essencials',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InvestmentsRoute = InvestmentsRouteImport.update({
+  id: '/investments',
+  path: '/investments',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IncomesRoute = IncomesRouteImport.update({
+  id: '/incomes',
+  path: '/incomes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExpensesRoute = ExpensesRouteImport.update({
+  id: '/expenses',
+  path: '/expenses',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EssentialsRoute = EssentialsRouteImport.update({
+  id: '/essentials',
+  path: '/essentials',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +49,102 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/essentials': typeof EssentialsRoute
+  '/expenses': typeof ExpensesRoute
+  '/incomes': typeof IncomesRoute
+  '/investments': typeof InvestmentsRoute
+  '/non-essencials': typeof NonEssencialsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/essentials': typeof EssentialsRoute
+  '/expenses': typeof ExpensesRoute
+  '/incomes': typeof IncomesRoute
+  '/investments': typeof InvestmentsRoute
+  '/non-essencials': typeof NonEssencialsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/essentials': typeof EssentialsRoute
+  '/expenses': typeof ExpensesRoute
+  '/incomes': typeof IncomesRoute
+  '/investments': typeof InvestmentsRoute
+  '/non-essencials': typeof NonEssencialsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/essentials'
+    | '/expenses'
+    | '/incomes'
+    | '/investments'
+    | '/non-essencials'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/essentials'
+    | '/expenses'
+    | '/incomes'
+    | '/investments'
+    | '/non-essencials'
+  id:
+    | '__root__'
+    | '/'
+    | '/essentials'
+    | '/expenses'
+    | '/incomes'
+    | '/investments'
+    | '/non-essencials'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  EssentialsRoute: typeof EssentialsRoute
+  ExpensesRoute: typeof ExpensesRoute
+  IncomesRoute: typeof IncomesRoute
+  InvestmentsRoute: typeof InvestmentsRoute
+  NonEssencialsRoute: typeof NonEssencialsRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/non-essencials': {
+      id: '/non-essencials'
+      path: '/non-essencials'
+      fullPath: '/non-essencials'
+      preLoaderRoute: typeof NonEssencialsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/investments': {
+      id: '/investments'
+      path: '/investments'
+      fullPath: '/investments'
+      preLoaderRoute: typeof InvestmentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/incomes': {
+      id: '/incomes'
+      path: '/incomes'
+      fullPath: '/incomes'
+      preLoaderRoute: typeof IncomesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/expenses': {
+      id: '/expenses'
+      path: '/expenses'
+      fullPath: '/expenses'
+      preLoaderRoute: typeof ExpensesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/essentials': {
+      id: '/essentials'
+      path: '/essentials'
+      fullPath: '/essentials'
+      preLoaderRoute: typeof EssentialsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,6 +157,11 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  EssentialsRoute: EssentialsRoute,
+  ExpensesRoute: ExpensesRoute,
+  IncomesRoute: IncomesRoute,
+  InvestmentsRoute: InvestmentsRoute,
+  NonEssencialsRoute: NonEssencialsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
