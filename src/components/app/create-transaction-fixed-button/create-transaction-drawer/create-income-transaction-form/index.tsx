@@ -15,6 +15,13 @@ import { DatePicker } from "@/components/ui/date-picker";
 
 export function CreateIncomeTransactionForm() {
   const [alreadyPaid, setAlreadyPaid] = useState("true");
+  const [receiptDate, setReceiptDate] = useState<Date | undefined>(new Date());
+  const [expectedReceiptDate, setExpectedReceiptDate] = useState<
+    Date | undefined
+  >(undefined);
+
+  const today = new Date();
+  const endOfMonth = new Date(today.getFullYear(), today.getMonth() + 1, 0);
 
   return (
     <form>
@@ -52,22 +59,35 @@ export function CreateIncomeTransactionForm() {
               </div>
             </RadioGroup>
           </Field>
-          {alreadyPaid ? (
+          {alreadyPaid === "true" ? (
             <Field>
               <FieldLabel htmlFor="receipt-date">
                 Data de recebimento
               </FieldLabel>
-              <DatePicker />
+              <DatePicker
+                date={receiptDate}
+                setDate={setReceiptDate}
+                calendarProps={{
+                  hideNavigation: true,
+                  disabled: { after: today },
+                }}
+              />
             </Field>
           ) : (
             <Field>
               <FieldLabel htmlFor="expected-receipt-date">
                 Previsão de recebimento
               </FieldLabel>
-              <DatePicker />
+              <DatePicker
+                date={expectedReceiptDate}
+                setDate={setExpectedReceiptDate}
+                calendarProps={{
+                  hideNavigation: true,
+                  disabled: { before: today, after: endOfMonth },
+                }}
+              />
             </Field>
           )}
-
           <Field>
             <FieldLabel htmlFor="description">Descrição</FieldLabel>
             <Textarea
