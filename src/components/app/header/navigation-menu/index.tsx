@@ -95,7 +95,7 @@ export function NavigationMenu() {
           </span>
           <Button>
             <MessageCircleIcon />
-            Dar feedback
+            Escrever um feedback
           </Button>
         </DrawerFooter>
       </DrawerContent>

@@ -9,7 +9,7 @@ const RootLayout = () => (
     <div className="flex h-screen flex-col">
       <Header />
 
-      <main>
+      <main className="p-5">
         <Outlet />
       </main>
     </div>

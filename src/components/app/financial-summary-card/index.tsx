@@ -32,7 +32,7 @@ export function FinancialSummaryCard({
             <Icon className={cn("size-8", iconClassName)} strokeWidth={1.5} />
             <div className="flex flex-col">
               <span className="text-sm text-muted-foreground">{title}</span>
-              <span className="text-medium light:text-zinc-800 text-xl">
+              <span className="text-medium light:text-zinc-800 text-lg">
                 {currencyAmount}
               </span>
             </div>

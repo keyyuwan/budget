@@ -18,7 +18,7 @@ export const Route = createFileRoute("/")({
 
 function RouteComponent() {
   return (
-    <div className="relative flex flex-1 flex-col p-5">
+    <div className="relative flex flex-1 flex-col">
       <span className="text-sm text-muted-foreground">Boa tarde, Key</span>
 
       <h1 className="text-2xl font-bold">Dezembro 2025</h1>
