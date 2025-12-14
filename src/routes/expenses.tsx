@@ -1,13 +1,11 @@
-import { BudgetGroupCard } from "@/components/app/budget-group-card";
+import { BudgetItemCard } from "@/components/app/budget-item-card";
 import { FinancialSummaryCard } from "@/components/app/financial-summary-card";
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { createFileRoute } from "@tanstack/react-router";
 import {
   ArrowDownNarrowWideIcon,
   BanknoteArrowDownIcon,
   BrainIcon,
   CarIcon,
-  ChartNoAxesColumnDecreasing,
   ChartNoAxesColumnIncreasingIcon,
   CircleFadingArrowUpIcon,
   FileTextIcon,
@@ -16,7 +14,6 @@ import {
   ReceiptTextIcon,
   ShoppingBagIcon,
   ShoppingCartIcon,
-  ToolCaseIcon,
 } from "lucide-react";
 
 export const Route = createFileRoute("/expenses")({
@@ -65,7 +62,7 @@ function RouteComponent() {
         <h2 className="text-xl font-medium">Essenciais</h2>
 
         <div className="scrollbar-none -mx-5 flex gap-2.5 overflow-x-auto px-5 py-2">
-          <BudgetGroupCard
+          <BudgetItemCard
             title="Moradia"
             pendingAmount={6_000}
             totalAmount={12_000}
@@ -73,7 +70,7 @@ function RouteComponent() {
             icon={HouseIcon}
             iconWrapperClassName="bg-zinc-400/10"
           />
-          <BudgetGroupCard
+          <BudgetItemCard
             title="Mercado"
             pendingAmount={6_000}
             totalAmount={12_000}
@@ -81,7 +78,7 @@ function RouteComponent() {
             icon={ShoppingCartIcon}
             iconWrapperClassName="bg-zinc-400/10"
           />
-          <BudgetGroupCard
+          <BudgetItemCard
             title="Contabilidade"
             pendingAmount={6_000}
             totalAmount={12_000}
@@ -96,7 +93,7 @@ function RouteComponent() {
         <h2 className="text-xl font-medium">Investimentos</h2>
 
         <div className="scrollbar-none -mx-5 flex gap-2.5 overflow-x-auto px-5 py-2">
-          <BudgetGroupCard
+          <BudgetItemCard
             title="Qualidade"
             pendingAmount={6_000}
             totalAmount={12_000}
@@ -104,7 +101,7 @@ function RouteComponent() {
             icon={CircleFadingArrowUpIcon}
             iconWrapperClassName="bg-zinc-400/10"
           />
-          <BudgetGroupCard
+          <BudgetItemCard
             title="Educação"
             pendingAmount={6_000}
             totalAmount={12_000}
@@ -112,7 +109,7 @@ function RouteComponent() {
             icon={BrainIcon}
             iconWrapperClassName="bg-zinc-400/10"
           />
-          <BudgetGroupCard
+          <BudgetItemCard
             title="Renda Fixa"
             pendingAmount={6_000}
             totalAmount={12_000}
@@ -127,7 +124,7 @@ function RouteComponent() {
         <h2 className="text-xl font-medium">Não Essenciais</h2>
 
         <div className="scrollbar-none -mx-5 flex gap-2.5 overflow-x-auto px-5 py-2">
-          <BudgetGroupCard
+          <BudgetItemCard
             title="Transporte"
             pendingAmount={6_000}
             totalAmount={12_000}
@@ -135,7 +132,7 @@ function RouteComponent() {
             icon={CarIcon}
             iconWrapperClassName="bg-zinc-400/10"
           />
-          <BudgetGroupCard
+          <BudgetItemCard
             title="Alimentação"
             pendingAmount={6_000}
             totalAmount={12_000}
@@ -143,7 +140,7 @@ function RouteComponent() {
             icon={HamburgerIcon}
             iconWrapperClassName="bg-zinc-400/10"
           />
-          <BudgetGroupCard
+          <BudgetItemCard
             title="Compras"
             pendingAmount={6_000}
             totalAmount={12_000}

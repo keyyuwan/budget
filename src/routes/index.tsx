@@ -1,5 +1,4 @@
 import { PaymentReminderCard } from "@/components/app/payment-reminder-card";
-import { BudgetGroupCard } from "@/components/app/budget-group-card";
 import { CreateTransactionFixedButton } from "@/components/app/create-transaction-fixed-button";
 import { FinancialSummaryCard } from "@/components/app/financial-summary-card";
 import { createFileRoute } from "@tanstack/react-router";
@@ -11,6 +10,7 @@ import {
   HouseIcon,
   ShoppingBag,
 } from "lucide-react";
+import { BudgetItemCard } from "@/components/app/budget-item-card";
 
 export const Route = createFileRoute("/")({
   component: RouteComponent,
@@ -58,7 +58,7 @@ function RouteComponent() {
         <div className="flex flex-col gap-1">
           <h2 className="text-xl font-medium">Orçamento</h2>
           <div className="scrollbar-none -mx-5 flex gap-2.5 overflow-x-auto px-5 py-2">
-            <BudgetGroupCard
+            <BudgetItemCard
               title="Essenciais"
               pendingAmount={6_000}
               totalAmount={12_000}
@@ -67,7 +67,7 @@ function RouteComponent() {
               iconClassName="text-sky-700"
               iconWrapperClassName="bg-sky-700/10"
             />
-            <BudgetGroupCard
+            <BudgetItemCard
               title="Investimentos"
               pendingAmount={2_000}
               totalAmount={3_900}
@@ -76,7 +76,7 @@ function RouteComponent() {
               iconClassName="text-emerald-500"
               iconWrapperClassName="bg-emerald-500/10"
             />
-            <BudgetGroupCard
+            <BudgetItemCard
               title="Não Essenciais"
               pendingAmount={1_000}
               totalAmount={3_900}
