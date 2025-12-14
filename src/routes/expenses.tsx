@@ -1,4 +1,4 @@
-import { BudgetItemCard } from "@/components/app/budget-item-card";
+import { BudgetCategoryCard } from "@/components/app/budget-category-card";
 import { FinancialSummaryCard } from "@/components/app/financial-summary-card";
 import { createFileRoute } from "@tanstack/react-router";
 import {
@@ -62,7 +62,7 @@ function RouteComponent() {
         <h2 className="text-xl font-medium">Essenciais</h2>
 
         <div className="scrollbar-none -mx-5 flex gap-2.5 overflow-x-auto px-5 py-2">
-          <BudgetItemCard
+          <BudgetCategoryCard
             title="Moradia"
             pendingAmount={6_000}
             totalAmount={12_000}
@@ -70,7 +70,7 @@ function RouteComponent() {
             icon={HouseIcon}
             iconWrapperClassName="bg-zinc-400/10"
           />
-          <BudgetItemCard
+          <BudgetCategoryCard
             title="Mercado"
             pendingAmount={6_000}
             totalAmount={12_000}
@@ -78,7 +78,7 @@ function RouteComponent() {
             icon={ShoppingCartIcon}
             iconWrapperClassName="bg-zinc-400/10"
           />
-          <BudgetItemCard
+          <BudgetCategoryCard
             title="Contabilidade"
             pendingAmount={6_000}
             totalAmount={12_000}
@@ -93,7 +93,7 @@ function RouteComponent() {
         <h2 className="text-xl font-medium">Investimentos</h2>
 
         <div className="scrollbar-none -mx-5 flex gap-2.5 overflow-x-auto px-5 py-2">
-          <BudgetItemCard
+          <BudgetCategoryCard
             title="Qualidade"
             pendingAmount={6_000}
             totalAmount={12_000}
@@ -101,7 +101,7 @@ function RouteComponent() {
             icon={CircleFadingArrowUpIcon}
             iconWrapperClassName="bg-zinc-400/10"
           />
-          <BudgetItemCard
+          <BudgetCategoryCard
             title="Educação"
             pendingAmount={6_000}
             totalAmount={12_000}
@@ -109,7 +109,7 @@ function RouteComponent() {
             icon={BrainIcon}
             iconWrapperClassName="bg-zinc-400/10"
           />
-          <BudgetItemCard
+          <BudgetCategoryCard
             title="Renda Fixa"
             pendingAmount={6_000}
             totalAmount={12_000}
@@ -124,7 +124,7 @@ function RouteComponent() {
         <h2 className="text-xl font-medium">Não Essenciais</h2>
 
         <div className="scrollbar-none -mx-5 flex gap-2.5 overflow-x-auto px-5 py-2">
-          <BudgetItemCard
+          <BudgetCategoryCard
             title="Transporte"
             pendingAmount={6_000}
             totalAmount={12_000}
@@ -132,7 +132,7 @@ function RouteComponent() {
             icon={CarIcon}
             iconWrapperClassName="bg-zinc-400/10"
           />
-          <BudgetItemCard
+          <BudgetCategoryCard
             title="Alimentação"
             pendingAmount={6_000}
             totalAmount={12_000}
@@ -140,7 +140,7 @@ function RouteComponent() {
             icon={HamburgerIcon}
             iconWrapperClassName="bg-zinc-400/10"
           />
-          <BudgetItemCard
+          <BudgetCategoryCard
             title="Compras"
             pendingAmount={6_000}
             totalAmount={12_000}

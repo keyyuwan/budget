@@ -10,7 +10,7 @@ import {
   HouseIcon,
   ShoppingBag,
 } from "lucide-react";
-import { BudgetItemCard } from "@/components/app/budget-item-card";
+import { BudgetCategoryCard } from "@/components/app/budget-category-card";
 
 export const Route = createFileRoute("/")({
   component: RouteComponent,
@@ -58,7 +58,7 @@ function RouteComponent() {
         <div className="flex flex-col gap-1">
           <h2 className="text-xl font-medium">Orçamento</h2>
           <div className="scrollbar-none -mx-5 flex gap-2.5 overflow-x-auto px-5 py-2">
-            <BudgetItemCard
+            <BudgetCategoryCard
               title="Essenciais"
               pendingAmount={6_000}
               totalAmount={12_000}
@@ -67,7 +67,7 @@ function RouteComponent() {
               iconClassName="text-sky-700"
               iconWrapperClassName="bg-sky-700/10"
             />
-            <BudgetItemCard
+            <BudgetCategoryCard
               title="Investimentos"
               pendingAmount={2_000}
               totalAmount={3_900}
@@ -76,7 +76,7 @@ function RouteComponent() {
               iconClassName="text-emerald-500"
               iconWrapperClassName="bg-emerald-500/10"
             />
-            <BudgetItemCard
+            <BudgetCategoryCard
               title="Não Essenciais"
               pendingAmount={1_000}
               totalAmount={3_900}

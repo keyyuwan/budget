@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import { Link, type LinkProps } from "@tanstack/react-router";
 import { type LucideIcon } from "lucide-react";
 
-interface BudgetItemCardProps {
+interface BudgetCategoryCardProps {
   title: string;
   pendingAmount: number;
   totalAmount: number;
@@ -14,7 +14,7 @@ interface BudgetItemCardProps {
   iconClassName?: string;
 }
 
-export function BudgetItemCard({
+export function BudgetCategoryCard({
   title,
   pendingAmount,
   totalAmount,
@@ -22,7 +22,7 @@ export function BudgetItemCard({
   icon: Icon,
   iconWrapperClassName,
   iconClassName,
-}: BudgetItemCardProps) {
+}: BudgetCategoryCardProps) {
   const pendingAmountCurrency = new Intl.NumberFormat("pt-BR", {
     style: "currency",
     currency: "BRL",
