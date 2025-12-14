@@ -1,7 +1,7 @@
 import { Card, CardHeader } from "@/components/ui/card";
 import { ReceiptTextIcon } from "lucide-react";
 
-export function BillReminderCard() {
+export function PaymentReminderCard() {
   return (
     <Card className="w-44 shrink-0">
       <CardHeader className="gap-4">

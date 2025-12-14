@@ -1,4 +1,4 @@
-import { BillReminderCard } from "@/components/app/bill-reminder-card";
+import { PaymentReminderCard } from "@/components/app/payment-reminder-card";
 import { BudgetGroupCard } from "@/components/app/budget-group-card";
 import { CreateTransactionFixedButton } from "@/components/app/create-transaction-fixed-button";
 import { FinancialSummaryCard } from "@/components/app/financial-summary-card";
@@ -25,9 +25,9 @@ function RouteComponent() {
 
       <div className="mt-1 flex flex-col gap-4">
         <div className="scrollbar-none -mx-5 flex gap-1.5 overflow-x-auto px-5 py-2">
-          <BillReminderCard />
-          <BillReminderCard />
-          <BillReminderCard />
+          <PaymentReminderCard />
+          <PaymentReminderCard />
+          <PaymentReminderCard />
         </div>
 
         <div className="flex flex-col gap-1">
