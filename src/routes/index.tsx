@@ -31,7 +31,7 @@ function RouteComponent() {
         </div>
 
         <div className="flex flex-col gap-1">
-          <h2 className="text-xl font-medium">Visão Geral</h2>
+          <h2 className="text-xl font-medium">Balanço</h2>
           <div className="flex flex-col gap-2.5 py-2">
             <FinancialSummaryCard
               title="Entradas"
@@ -48,7 +48,7 @@ function RouteComponent() {
               href="/expenses"
             />
             <FinancialSummaryCard
-              title="Balanço"
+              title="Disponível"
               amount={500.34}
               icon={ArrowUpDownIcon}
             />
