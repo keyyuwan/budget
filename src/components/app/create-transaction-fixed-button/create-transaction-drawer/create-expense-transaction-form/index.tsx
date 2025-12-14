@@ -153,7 +153,9 @@ export function CreateExpenseTransactionForm() {
             />
           </Field>
           <Field>
-            <Button type="submit">Adicionar saída</Button>
+            <Button type="submit" size="lg">
+              Adicionar saída
+            </Button>
           </Field>
         </FieldGroup>
       </FieldSet>

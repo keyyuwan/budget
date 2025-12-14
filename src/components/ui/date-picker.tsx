@@ -35,7 +35,7 @@ export function DatePicker({ date, setDate, calendarProps }: DatePickerProps) {
           <ChevronDownIcon />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-auto overflow-hidden p-0" align="start">
+      <PopoverContent className="w-auto overflow-hidden p-0" align="end">
         <Calendar
           {...calendarProps}
           mode="single"

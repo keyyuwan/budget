@@ -21,17 +21,17 @@ function RouteComponent() {
     <div className="relative flex flex-1 flex-col p-5">
       <span className="text-sm text-muted-foreground">Boa tarde, Key</span>
 
-      <h1 className="text-2xl font-medium">Dezembro 2025</h1>
+      <h1 className="text-2xl font-bold">Dezembro 2025</h1>
 
-      <div className="mt-5 flex flex-col gap-5">
-        <div className="scrollbar-none -mx-5 flex gap-2.5 overflow-x-auto px-5 py-2">
+      <div className="mt-1 flex flex-col gap-4">
+        <div className="scrollbar-none -mx-5 flex gap-1.5 overflow-x-auto px-5 py-2">
           <BillReminderCard />
           <BillReminderCard />
           <BillReminderCard />
         </div>
 
-        <div className="flex flex-col gap-2">
-          <h2 className="text-lg font-medium">Visão Geral</h2>
+        <div className="flex flex-col gap-1">
+          <h2 className="text-xl font-medium">Visão Geral</h2>
           <div className="flex flex-col gap-2.5 py-2">
             <FinancialSummaryCard
               title="Entradas"
@@ -55,8 +55,8 @@ function RouteComponent() {
           </div>
         </div>
 
-        <div className="flex flex-col gap-2">
-          <h2 className="text-lg font-medium">Orçamento</h2>
+        <div className="flex flex-col gap-1">
+          <h2 className="text-xl font-medium">Orçamento</h2>
           <div className="scrollbar-none -mx-5 flex gap-2.5 overflow-x-auto px-5 py-2">
             <BudgetGroupCard
               title="Essenciais"

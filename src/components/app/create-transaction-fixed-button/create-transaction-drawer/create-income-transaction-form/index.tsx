@@ -97,7 +97,9 @@ export function CreateIncomeTransactionForm() {
             />
           </Field>
           <Field>
-            <Button type="submit">Adicionar entrada</Button>
+            <Button type="submit" size="lg">
+              Adicionar entrada
+            </Button>
           </Field>
         </FieldGroup>
       </FieldSet>
