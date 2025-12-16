@@ -16,6 +16,7 @@ import { Route as IncomesRouteImport } from './routes/incomes'
 import { Route as ExpensesRouteImport } from './routes/expenses'
 import { Route as EssentialsRouteImport } from './routes/essentials'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as BudgetCategoriesIdRouteImport } from './routes/budget-categories.$id'
 
 const PaymentsRoute = PaymentsRouteImport.update({
   id: '/payments',
@@ -52,6 +53,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BudgetCategoriesIdRoute = BudgetCategoriesIdRouteImport.update({
+  id: '/budget-categories/$id',
+  path: '/budget-categories/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -61,6 +67,7 @@ export interface FileRoutesByFullPath {
   '/investments': typeof InvestmentsRoute
   '/non-essencials': typeof NonEssencialsRoute
   '/payments': typeof PaymentsRoute
+  '/budget-categories/$id': typeof BudgetCategoriesIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -70,6 +77,7 @@ export interface FileRoutesByTo {
   '/investments': typeof InvestmentsRoute
   '/non-essencials': typeof NonEssencialsRoute
   '/payments': typeof PaymentsRoute
+  '/budget-categories/$id': typeof BudgetCategoriesIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -80,6 +88,7 @@ export interface FileRoutesById {
   '/investments': typeof InvestmentsRoute
   '/non-essencials': typeof NonEssencialsRoute
   '/payments': typeof PaymentsRoute
+  '/budget-categories/$id': typeof BudgetCategoriesIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -91,6 +100,7 @@ export interface FileRouteTypes {
     | '/investments'
     | '/non-essencials'
     | '/payments'
+    | '/budget-categories/$id'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -100,6 +110,7 @@ export interface FileRouteTypes {
     | '/investments'
     | '/non-essencials'
     | '/payments'
+    | '/budget-categories/$id'
   id:
     | '__root__'
     | '/'
@@ -109,6 +120,7 @@ export interface FileRouteTypes {
     | '/investments'
     | '/non-essencials'
     | '/payments'
+    | '/budget-categories/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -119,6 +131,7 @@ export interface RootRouteChildren {
   InvestmentsRoute: typeof InvestmentsRoute
   NonEssencialsRoute: typeof NonEssencialsRoute
   PaymentsRoute: typeof PaymentsRoute
+  BudgetCategoriesIdRoute: typeof BudgetCategoriesIdRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -172,6 +185,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/budget-categories/$id': {
+      id: '/budget-categories/$id'
+      path: '/budget-categories/$id'
+      fullPath: '/budget-categories/$id'
+      preLoaderRoute: typeof BudgetCategoriesIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -183,6 +203,7 @@ const rootRouteChildren: RootRouteChildren = {
   InvestmentsRoute: InvestmentsRoute,
   NonEssencialsRoute: NonEssencialsRoute,
   PaymentsRoute: PaymentsRoute,
+  BudgetCategoriesIdRoute: BudgetCategoriesIdRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

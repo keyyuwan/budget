@@ -1,24 +1,24 @@
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { cn } from "@/lib/utils";
-import { Link, type LinkProps } from "@tanstack/react-router";
+import { Link } from "@tanstack/react-router";
 import { type LucideIcon } from "lucide-react";
 
 interface BudgetCategoryCardProps {
+  categoryId: string;
   title: string;
   pendingAmount: number;
   totalAmount: number;
-  href: LinkProps["to"];
   icon: LucideIcon;
   iconWrapperClassName?: string;
   iconClassName?: string;
 }
 
 export function BudgetCategoryCard({
+  categoryId,
   title,
   pendingAmount,
   totalAmount,
-  href,
   icon: Icon,
   iconWrapperClassName,
   iconClassName,
@@ -37,7 +37,7 @@ export function BudgetCategoryCard({
   const progressPercentage = progress.toFixed(0);
 
   return (
-    <Link to={href}>
+    <Link to="/budget-categories/$id" params={{ id: categoryId }}>
       <Card className="w-64 shrink-0">
         <CardHeader>
           <div

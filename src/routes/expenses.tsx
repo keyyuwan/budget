@@ -55,25 +55,25 @@ function RouteComponent() {
             title="Moradia"
             pendingAmount={6_000}
             totalAmount={12_000}
-            href="/"
             icon={HouseIcon}
             iconWrapperClassName="bg-zinc-400/10"
+            categoryId="1"
           />
           <BudgetCategoryCard
             title="Mercado"
             pendingAmount={6_000}
             totalAmount={12_000}
-            href="/"
             icon={ShoppingCartIcon}
             iconWrapperClassName="bg-zinc-400/10"
+            categoryId="2"
           />
           <BudgetCategoryCard
             title="Contabilidade"
             pendingAmount={6_000}
             totalAmount={12_000}
-            href="/"
             icon={FileTextIcon}
             iconWrapperClassName="bg-zinc-400/10"
+            categoryId="3"
           />
         </div>
       </div>
@@ -86,25 +86,25 @@ function RouteComponent() {
             title="Qualidade"
             pendingAmount={6_000}
             totalAmount={12_000}
-            href="/"
             icon={CircleFadingArrowUpIcon}
             iconWrapperClassName="bg-zinc-400/10"
+            categoryId="4"
           />
           <BudgetCategoryCard
             title="Educação"
             pendingAmount={6_000}
             totalAmount={12_000}
-            href="/"
             icon={BrainIcon}
             iconWrapperClassName="bg-zinc-400/10"
+            categoryId="5"
           />
           <BudgetCategoryCard
             title="Renda Fixa"
             pendingAmount={6_000}
             totalAmount={12_000}
-            href="/"
             icon={ChartNoAxesColumnIncreasingIcon}
             iconWrapperClassName="bg-zinc-400/10"
+            categoryId="6"
           />
         </div>
       </div>
@@ -117,25 +117,25 @@ function RouteComponent() {
             title="Transporte"
             pendingAmount={6_000}
             totalAmount={12_000}
-            href="/"
             icon={CarIcon}
             iconWrapperClassName="bg-zinc-400/10"
+            categoryId="7"
           />
           <BudgetCategoryCard
             title="Alimentação"
             pendingAmount={6_000}
             totalAmount={12_000}
-            href="/"
             icon={HamburgerIcon}
             iconWrapperClassName="bg-zinc-400/10"
+            categoryId="8"
           />
           <BudgetCategoryCard
             title="Compras"
             pendingAmount={6_000}
             totalAmount={12_000}
-            href="/"
             icon={ShoppingBagIcon}
             iconWrapperClassName="bg-zinc-400/10"
+            categoryId="9"
           />
         </div>
       </div>
