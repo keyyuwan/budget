@@ -9,7 +9,9 @@ export function PaymentReminderCard() {
           <ReceiptTextIcon className="size-4 text-primary" />
         </div>
         <span className="text-sm">
-          <span className="font-semibold">Lembrete de conta</span>:{" "}
+          <span className="text block text-xs font-semibold tracking-tight">
+            Lembrete de conta:
+          </span>
           <span className="text-muted-foreground">Luz em 2 dias</span>
         </span>
       </CardHeader>

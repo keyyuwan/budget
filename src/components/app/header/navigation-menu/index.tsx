@@ -10,6 +10,7 @@ import {
   BanknoteArrowDownIcon,
   BanknoteArrowUpIcon,
   ChartPieIcon,
+  CreditCardIcon,
   HouseIcon,
   MenuIcon,
   MessageCircleIcon,
@@ -63,6 +64,12 @@ export function NavigationMenu() {
             icon={BanknoteArrowDownIcon}
             label="Saídas"
             href="/expenses"
+            onClick={handleCloseMenu}
+          />
+          <NavigationLink
+            icon={CreditCardIcon}
+            label="Pagamentos"
+            href="/payments"
             onClick={handleCloseMenu}
           />
         </nav>

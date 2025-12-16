@@ -47,17 +47,6 @@ function RouteComponent() {
         />
       </div>
 
-      {/* <div className="flex flex-col gap-3">
-        <h2 className="text-xl font-medium">Seus Pagamentos</h2>
-
-        <Tabs defaultValue="next-bills">
-          <TabsList className="w-full">
-            <TabsTrigger value="next-bills">Próximos</TabsTrigger>
-            <TabsTrigger value="past-bills">Pagos</TabsTrigger>
-          </TabsList>
-        </Tabs>
-      </div> */}
-
       <div className="flex flex-col gap-1">
         <h2 className="text-xl font-medium">Essenciais</h2>
 
