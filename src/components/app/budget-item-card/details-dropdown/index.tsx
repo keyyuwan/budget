@@ -23,17 +23,17 @@ export function BudgetItemCardDetailsDropdown() {
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" sideOffset={8} className="min-w-40">
         <DropdownMenuItem className="text-sm">
-          <FileTextIcon className="size-3.5" />
+          <FileTextIcon className="size-3.5 text-foreground" />
           Detalhes
         </DropdownMenuItem>
         <DropdownMenuSeparator />
         <DropdownMenuItem className="text-sm">
-          <PencilIcon className="size-3.5" />
+          <PencilIcon className="size-3.5 text-foreground" />
           Editar
         </DropdownMenuItem>
         <DropdownMenuSeparator />
-        <DropdownMenuItem className="text-sm">
-          <Trash2Icon className="size-3.5" />
+        <DropdownMenuItem className="text-sm text-destructive">
+          <Trash2Icon className="size-3.5 text-destructive" />
           Excluir
         </DropdownMenuItem>
       </DropdownMenuContent>

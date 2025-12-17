@@ -6,13 +6,8 @@ import {
 } from "@/components/ui/drawer";
 import type { TransactionType } from "..";
 import { CreateIncomeTransactionForm } from "./create-income-transaction-form";
-import {
-  BanknoteArrowDownIcon,
-  BanknoteArrowUpIcon,
-  XIcon,
-} from "lucide-react";
+import { BanknoteArrowDownIcon, BanknoteArrowUpIcon } from "lucide-react";
 import { CreateExpenseTransactionForm } from "./create-expense-transaction-form";
-import { Button } from "@/components/ui/button";
 
 const TITLE_MAP: Record<TransactionType, string> = {
   expense: "Nova Saída",
@@ -35,7 +30,7 @@ const ICON_MAP: Record<TransactionType, React.ReactNode> = {
 interface CreateTransactionDrawerProps {
   transactionType: TransactionType;
   open: boolean;
-  onOpenChange: () => void;
+  onOpenChange: (open: boolean) => void;
 }
 
 export function CreateTransactionDrawer({
@@ -48,19 +43,11 @@ export function CreateTransactionDrawer({
   return (
     <Drawer open={open} onOpenChange={onOpenChange}>
       <DrawerContent>
-        <DrawerHeader className="flex-row items-center justify-between">
+        <DrawerHeader>
           <div className="flex flex-row items-center gap-2">
             {ICON_MAP[transactionType]}
             <DrawerTitle className="text-left">{title}</DrawerTitle>
           </div>
-          <Button
-            variant="ghost"
-            size="icon"
-            aria-label="Fechar"
-            onClick={onOpenChange}
-          >
-            <XIcon className="size-5 text-muted-foreground" />
-          </Button>
         </DrawerHeader>
         {transactionType === "income" && <CreateIncomeTransactionForm />}
         {transactionType === "expense" && <CreateExpenseTransactionForm />}

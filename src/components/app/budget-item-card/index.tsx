@@ -4,6 +4,8 @@ import { cn } from "@/lib/utils";
 import { formatBRL } from "@/utils/format-brl";
 import { CheckIcon, type LucideIcon } from "lucide-react";
 import { BudgetItemCardDetailsDropdown } from "./details-dropdown";
+import { useState } from "react";
+import { PaymentDrawer } from "./payment-drawer";
 
 interface BudgetItemCardProps {
   icon: LucideIcon;
@@ -24,6 +26,8 @@ export function BudgetItemCard({
   isPaid = false,
   hasDetails = true,
 }: BudgetItemCardProps) {
+  const [isPaymentOpen, setIsPaymentOpen] = useState(false);
+
   const currencyAmount = formatBRL(amount);
 
   return (
@@ -54,11 +58,16 @@ export function BudgetItemCard({
         </div>
         <div className="flex items-center gap-2">
           {isPaid ? (
-            <CheckIcon className="size-5 text-primary" />
+            <div className="flex size-9 items-center justify-center rounded-full bg-primary/10">
+              <CheckIcon className="size-5 text-primary" />
+            </div>
           ) : (
-            <Button variant="outline">Pagar</Button>
+            <Button variant="outline" onClick={() => setIsPaymentOpen(true)}>
+              Pagar
+            </Button>
           )}
 
+          <PaymentDrawer open={isPaymentOpen} onOpenChange={setIsPaymentOpen} />
           {hasDetails && <BudgetItemCardDetailsDropdown />}
         </div>
       </CardContent>

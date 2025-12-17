@@ -29,8 +29,8 @@ function RouteComponent() {
             value="next-payments"
             className="mt-2 flex flex-col gap-5"
           >
-            <span className="text-sm font-medium text-muted-foreground">
-              Você tem <strong>5</strong> contas neste mês
+            <span className="text-sm text-muted-foreground">
+              Você tem <strong>5</strong> contas a vencer este mês.
             </span>
 
             <div className="flex flex-col gap-2">

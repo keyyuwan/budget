@@ -50,6 +50,10 @@ function RouteComponent() {
       </div>
 
       <div className="flex flex-col gap-4 px-5">
+        <span className="text-sm text-muted-foreground">
+          Você tem <strong>5</strong> gastos em Moradia.
+        </span>
+
         <BudgetItemCard
           icon={LightbulbIcon}
           title="Luz"
