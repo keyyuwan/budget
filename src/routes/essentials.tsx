@@ -1,3 +1,4 @@
+import { Container } from "@/components/app/container";
 import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/essentials")({
@@ -5,5 +6,9 @@ export const Route = createFileRoute("/essentials")({
 });
 
 function RouteComponent() {
-  return <div>Hello "/essentials"!</div>;
+  return (
+    <Container>
+      <div>Hello "/essentials"!</div>
+    </Container>
+  );
 }
