@@ -7,7 +7,7 @@ export function Header() {
   const isDesktop = useMediaQuery("(min-width: 768px)");
 
   return (
-    <header className="border-b">
+    <header className="border-b bg-card">
       <div className="flex items-center justify-between px-5 py-4">
         <div className="flex items-center gap-3">
           {!isDesktop && <NavigationMenu />}
