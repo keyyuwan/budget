@@ -2,7 +2,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import { formatBRL } from "@/utils/format-brl";
-import { CheckIcon, EllipsisIcon, type LucideIcon } from "lucide-react";
+import { CheckIcon, type LucideIcon } from "lucide-react";
+import { BudgetItemCardDetailsDropdown } from "./details-dropdown";
 
 interface BudgetItemCardProps {
   icon: LucideIcon;
@@ -58,11 +59,7 @@ export function BudgetItemCard({
             <Button variant="outline">Pagar</Button>
           )}
 
-          {hasDetails && (
-            <Button variant="ghost" size="icon" aria-label="Editar">
-              <EllipsisIcon className="size-5 text-muted-foreground" />
-            </Button>
-          )}
+          {hasDetails && <BudgetItemCardDetailsDropdown />}
         </div>
       </CardContent>
     </Card>
