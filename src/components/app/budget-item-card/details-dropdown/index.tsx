@@ -9,9 +9,12 @@ import {
 import { EllipsisIcon, PencilIcon, Trash2Icon } from "lucide-react";
 import { useState } from "react";
 import { EditExpenseDrawer } from "../edit-expense-drawer";
+import { DeleteExpenseAlertDialog } from "../delete-expense-alert-dialog";
 
 export function BudgetItemCardDetailsDropdown() {
   const [isEditExpenseDrawerOpen, setIsEditExpenseDrawerOpen] = useState(false);
+  const [isDeleteExpenseAlertDialogOpen, setIsDeleteExpenseAlertDialogOpen] =
+    useState(false);
 
   return (
     <>
@@ -29,9 +32,11 @@ export function BudgetItemCardDetailsDropdown() {
             <PencilIcon className="size-3.5 text-foreground" />
             Editar
           </DropdownMenuItem>
-
           <DropdownMenuSeparator />
-          <DropdownMenuItem className="text-sm text-destructive">
+          <DropdownMenuItem
+            className="text-sm text-destructive"
+            onClick={() => setIsDeleteExpenseAlertDialogOpen(true)}
+          >
             <Trash2Icon className="size-3.5 text-destructive" />
             Excluir
           </DropdownMenuItem>
@@ -41,6 +46,11 @@ export function BudgetItemCardDetailsDropdown() {
       <EditExpenseDrawer
         open={isEditExpenseDrawerOpen}
         onOpenChange={setIsEditExpenseDrawerOpen}
+      />
+
+      <DeleteExpenseAlertDialog
+        open={isDeleteExpenseAlertDialogOpen}
+        onOpenChange={setIsDeleteExpenseAlertDialogOpen}
       />
     </>
   );
