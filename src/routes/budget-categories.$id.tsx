@@ -1,5 +1,6 @@
 import { BudgetItemCard } from "@/components/app/budget-item-card";
 import { Container } from "@/components/app/container";
+import { CreateTransactionFixedButton } from "@/components/app/create-transaction-fixed-button";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { createFileRoute } from "@tanstack/react-router";
@@ -16,7 +17,7 @@ export const Route = createFileRoute("/budget-categories/$id")({
 
 function RouteComponent() {
   return (
-    <div className="flex flex-col gap-4">
+    <div className="relative flex flex-col gap-4">
       <div className="rounded-b-3xl border-b bg-card">
         <Container className="flex items-start justify-between">
           <div className="flex w-full items-start gap-2.5">
@@ -69,6 +70,8 @@ function RouteComponent() {
           isPaid
         />
       </div>
+
+      <CreateTransactionFixedButton hide="income" />
     </div>
   );
 }

@@ -17,7 +17,13 @@ import { CreateTransactionDrawer } from "./create-transaction-drawer";
 
 export type TransactionType = "expense" | "income";
 
-export function CreateTransactionFixedButton() {
+interface CreateTransactionFixedButtonProps {
+  hide?: TransactionType;
+}
+
+export function CreateTransactionFixedButton({
+  hide,
+}: CreateTransactionFixedButtonProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [transactionType, setTransactionType] =
     useState<TransactionType | null>(null);
@@ -50,35 +56,39 @@ export function CreateTransactionFixedButton() {
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent side="left" align="end" sideOffset={12}>
-          <DropdownMenuItem
-            className="p-3"
-            onClick={() => handleTransactionTypeChange("expense")}
-          >
-            <div className="flex size-7.5 items-center justify-center rounded-full bg-destructive/10">
-              <BanknoteArrowDownIcon className="size-4 text-destructive" />
-            </div>
-            Nova Saída
-          </DropdownMenuItem>
-          <DropdownMenuSeparator />
-          <DropdownMenuItem
-            className="p-3"
-            onClick={() => handleTransactionTypeChange("income")}
-          >
-            <div className="flex size-7.5 items-center justify-center rounded-full bg-primary/10">
-              <BanknoteArrowUpIcon className="size-4 text-primary" />
-            </div>
-            Nova Entrada
-          </DropdownMenuItem>
+          {hide !== "expense" && (
+            <>
+              <DropdownMenuItem
+                className="p-3"
+                onClick={() => handleTransactionTypeChange("expense")}
+              >
+                <div className="flex size-7.5 items-center justify-center rounded-full bg-destructive/10">
+                  <BanknoteArrowDownIcon className="size-4 text-destructive" />
+                </div>
+                Nova Saída
+              </DropdownMenuItem>
+            </>
+          )}
+          {!hide && <DropdownMenuSeparator />}
+          {hide !== "income" && (
+            <DropdownMenuItem
+              className="p-3"
+              onClick={() => handleTransactionTypeChange("income")}
+            >
+              <div className="flex size-7.5 items-center justify-center rounded-full bg-primary/10">
+                <BanknoteArrowUpIcon className="size-4 text-primary" />
+              </div>
+              Nova Entrada
+            </DropdownMenuItem>
+          )}
         </DropdownMenuContent>
       </DropdownMenu>
 
-      {transactionType && (
-        <CreateTransactionDrawer
-          open={isCreateTransactionDrawerOpen}
-          onOpenChange={handleCloseCreateTransactionDrawer}
-          transactionType={transactionType}
-        />
-      )}
+      <CreateTransactionDrawer
+        open={isCreateTransactionDrawerOpen}
+        onOpenChange={handleCloseCreateTransactionDrawer}
+        transactionType={transactionType ?? "expense"}
+      />
     </>
   );
 }

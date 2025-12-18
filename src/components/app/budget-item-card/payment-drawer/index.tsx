@@ -32,8 +32,8 @@ export function PaymentDrawer({ open, onOpenChange }: PaymentDrawerProps) {
         </DrawerHeader>
 
         <div className="flex flex-col gap-2 p-4">
-          <div className="flex items-center justify-between text-sm text-muted-foreground">
-            <span className="font-medium">Data de vencimento:</span>
+          <div className="flex items-center justify-between text-sm font-medium text-muted-foreground">
+            <span>Data de vencimento:</span>
             <span>17/12/2025</span>
           </div>
 
