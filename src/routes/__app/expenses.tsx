@@ -17,7 +17,7 @@ import {
   ShoppingCartIcon,
 } from "lucide-react";
 
-export const Route = createFileRoute("/expenses")({
+export const Route = createFileRoute("/__app/expenses")({
   component: RouteComponent,
 });
 

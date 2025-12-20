@@ -4,7 +4,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { createFileRoute } from "@tanstack/react-router";
 import { LightbulbIcon } from "lucide-react";
 
-export const Route = createFileRoute("/payments")({
+export const Route = createFileRoute("/__app/payments")({
   component: RouteComponent,
 });
 

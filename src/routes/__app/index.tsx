@@ -13,7 +13,7 @@ import {
 import { BudgetCategoryCard } from "@/components/app/budget-category-card";
 import { Container } from "@/components/app/container";
 
-export const Route = createFileRoute("/")({
+export const Route = createFileRoute("/__app/")({
   component: RouteComponent,
 });
 

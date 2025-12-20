@@ -9,7 +9,7 @@ import {
   ShoppingCartIcon,
 } from "lucide-react";
 
-export const Route = createFileRoute("/essentials")({
+export const Route = createFileRoute("/__app/essentials")({
   component: RouteComponent,
 });
 

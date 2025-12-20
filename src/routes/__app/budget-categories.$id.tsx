@@ -11,7 +11,7 @@ import {
   PencilIcon,
 } from "lucide-react";
 
-export const Route = createFileRoute("/budget-categories/$id")({
+export const Route = createFileRoute("/__app/budget-categories/$id")({
   component: RouteComponent,
 });
 

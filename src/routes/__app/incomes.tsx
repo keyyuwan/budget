@@ -9,7 +9,7 @@ import {
   DollarSignIcon,
 } from "lucide-react";
 
-export const Route = createFileRoute("/incomes")({
+export const Route = createFileRoute("/__app/incomes")({
   component: RouteComponent,
 });
 

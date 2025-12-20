@@ -9,201 +9,246 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as PaymentsRouteImport } from './routes/payments'
-import { Route as NonEssentialsRouteImport } from './routes/non-essentials'
-import { Route as InvestmentsRouteImport } from './routes/investments'
-import { Route as IncomesRouteImport } from './routes/incomes'
-import { Route as ExpensesRouteImport } from './routes/expenses'
-import { Route as EssentialsRouteImport } from './routes/essentials'
-import { Route as IndexRouteImport } from './routes/index'
-import { Route as BudgetCategoriesIdRouteImport } from './routes/budget-categories.$id'
+import { Route as _appRouteImport } from './routes/__app'
+import { Route as _appIndexRouteImport } from './routes/__app/index'
+import { Route as AuthSignInRouteImport } from './routes/auth/sign-in'
+import { Route as _appPaymentsRouteImport } from './routes/__app/payments'
+import { Route as _appNonEssentialsRouteImport } from './routes/__app/non-essentials'
+import { Route as _appInvestmentsRouteImport } from './routes/__app/investments'
+import { Route as _appIncomesRouteImport } from './routes/__app/incomes'
+import { Route as _appExpensesRouteImport } from './routes/__app/expenses'
+import { Route as _appEssentialsRouteImport } from './routes/__app/essentials'
+import { Route as _appBudgetCategoriesIdRouteImport } from './routes/__app/budget-categories.$id'
 
-const PaymentsRoute = PaymentsRouteImport.update({
-  id: '/payments',
-  path: '/payments',
+const _appRoute = _appRouteImport.update({
+  id: '/__app',
   getParentRoute: () => rootRouteImport,
 } as any)
-const NonEssentialsRoute = NonEssentialsRouteImport.update({
-  id: '/non-essentials',
-  path: '/non-essentials',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const InvestmentsRoute = InvestmentsRouteImport.update({
-  id: '/investments',
-  path: '/investments',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const IncomesRoute = IncomesRouteImport.update({
-  id: '/incomes',
-  path: '/incomes',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ExpensesRoute = ExpensesRouteImport.update({
-  id: '/expenses',
-  path: '/expenses',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const EssentialsRoute = EssentialsRouteImport.update({
-  id: '/essentials',
-  path: '/essentials',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const IndexRoute = IndexRouteImport.update({
+const _appIndexRoute = _appIndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => _appRoute,
+} as any)
+const AuthSignInRoute = AuthSignInRouteImport.update({
+  id: '/auth/sign-in',
+  path: '/auth/sign-in',
   getParentRoute: () => rootRouteImport,
 } as any)
-const BudgetCategoriesIdRoute = BudgetCategoriesIdRouteImport.update({
+const _appPaymentsRoute = _appPaymentsRouteImport.update({
+  id: '/payments',
+  path: '/payments',
+  getParentRoute: () => _appRoute,
+} as any)
+const _appNonEssentialsRoute = _appNonEssentialsRouteImport.update({
+  id: '/non-essentials',
+  path: '/non-essentials',
+  getParentRoute: () => _appRoute,
+} as any)
+const _appInvestmentsRoute = _appInvestmentsRouteImport.update({
+  id: '/investments',
+  path: '/investments',
+  getParentRoute: () => _appRoute,
+} as any)
+const _appIncomesRoute = _appIncomesRouteImport.update({
+  id: '/incomes',
+  path: '/incomes',
+  getParentRoute: () => _appRoute,
+} as any)
+const _appExpensesRoute = _appExpensesRouteImport.update({
+  id: '/expenses',
+  path: '/expenses',
+  getParentRoute: () => _appRoute,
+} as any)
+const _appEssentialsRoute = _appEssentialsRouteImport.update({
+  id: '/essentials',
+  path: '/essentials',
+  getParentRoute: () => _appRoute,
+} as any)
+const _appBudgetCategoriesIdRoute = _appBudgetCategoriesIdRouteImport.update({
   id: '/budget-categories/$id',
   path: '/budget-categories/$id',
-  getParentRoute: () => rootRouteImport,
+  getParentRoute: () => _appRoute,
 } as any)
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute
-  '/essentials': typeof EssentialsRoute
-  '/expenses': typeof ExpensesRoute
-  '/incomes': typeof IncomesRoute
-  '/investments': typeof InvestmentsRoute
-  '/non-essentials': typeof NonEssentialsRoute
-  '/payments': typeof PaymentsRoute
-  '/budget-categories/$id': typeof BudgetCategoriesIdRoute
+  '/essentials': typeof _appEssentialsRoute
+  '/expenses': typeof _appExpensesRoute
+  '/incomes': typeof _appIncomesRoute
+  '/investments': typeof _appInvestmentsRoute
+  '/non-essentials': typeof _appNonEssentialsRoute
+  '/payments': typeof _appPaymentsRoute
+  '/auth/sign-in': typeof AuthSignInRoute
+  '/': typeof _appIndexRoute
+  '/budget-categories/$id': typeof _appBudgetCategoriesIdRoute
 }
 export interface FileRoutesByTo {
-  '/': typeof IndexRoute
-  '/essentials': typeof EssentialsRoute
-  '/expenses': typeof ExpensesRoute
-  '/incomes': typeof IncomesRoute
-  '/investments': typeof InvestmentsRoute
-  '/non-essentials': typeof NonEssentialsRoute
-  '/payments': typeof PaymentsRoute
-  '/budget-categories/$id': typeof BudgetCategoriesIdRoute
+  '/essentials': typeof _appEssentialsRoute
+  '/expenses': typeof _appExpensesRoute
+  '/incomes': typeof _appIncomesRoute
+  '/investments': typeof _appInvestmentsRoute
+  '/non-essentials': typeof _appNonEssentialsRoute
+  '/payments': typeof _appPaymentsRoute
+  '/auth/sign-in': typeof AuthSignInRoute
+  '/': typeof _appIndexRoute
+  '/budget-categories/$id': typeof _appBudgetCategoriesIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
-  '/': typeof IndexRoute
-  '/essentials': typeof EssentialsRoute
-  '/expenses': typeof ExpensesRoute
-  '/incomes': typeof IncomesRoute
-  '/investments': typeof InvestmentsRoute
-  '/non-essentials': typeof NonEssentialsRoute
-  '/payments': typeof PaymentsRoute
-  '/budget-categories/$id': typeof BudgetCategoriesIdRoute
+  '/__app': typeof _appRouteWithChildren
+  '/__app/essentials': typeof _appEssentialsRoute
+  '/__app/expenses': typeof _appExpensesRoute
+  '/__app/incomes': typeof _appIncomesRoute
+  '/__app/investments': typeof _appInvestmentsRoute
+  '/__app/non-essentials': typeof _appNonEssentialsRoute
+  '/__app/payments': typeof _appPaymentsRoute
+  '/auth/sign-in': typeof AuthSignInRoute
+  '/__app/': typeof _appIndexRoute
+  '/__app/budget-categories/$id': typeof _appBudgetCategoriesIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    | '/'
     | '/essentials'
     | '/expenses'
     | '/incomes'
     | '/investments'
     | '/non-essentials'
     | '/payments'
+    | '/auth/sign-in'
+    | '/'
     | '/budget-categories/$id'
   fileRoutesByTo: FileRoutesByTo
   to:
-    | '/'
     | '/essentials'
     | '/expenses'
     | '/incomes'
     | '/investments'
     | '/non-essentials'
     | '/payments'
+    | '/auth/sign-in'
+    | '/'
     | '/budget-categories/$id'
   id:
     | '__root__'
-    | '/'
-    | '/essentials'
-    | '/expenses'
-    | '/incomes'
-    | '/investments'
-    | '/non-essentials'
-    | '/payments'
-    | '/budget-categories/$id'
+    | '/__app'
+    | '/__app/essentials'
+    | '/__app/expenses'
+    | '/__app/incomes'
+    | '/__app/investments'
+    | '/__app/non-essentials'
+    | '/__app/payments'
+    | '/auth/sign-in'
+    | '/__app/'
+    | '/__app/budget-categories/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute
-  EssentialsRoute: typeof EssentialsRoute
-  ExpensesRoute: typeof ExpensesRoute
-  IncomesRoute: typeof IncomesRoute
-  InvestmentsRoute: typeof InvestmentsRoute
-  NonEssentialsRoute: typeof NonEssentialsRoute
-  PaymentsRoute: typeof PaymentsRoute
-  BudgetCategoriesIdRoute: typeof BudgetCategoriesIdRoute
+  _appRoute: typeof _appRouteWithChildren
+  AuthSignInRoute: typeof AuthSignInRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/payments': {
-      id: '/payments'
-      path: '/payments'
-      fullPath: '/payments'
-      preLoaderRoute: typeof PaymentsRouteImport
+    '/__app': {
+      id: '/__app'
+      path: ''
+      fullPath: ''
+      preLoaderRoute: typeof _appRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/non-essentials': {
-      id: '/non-essentials'
-      path: '/non-essentials'
-      fullPath: '/non-essentials'
-      preLoaderRoute: typeof NonEssentialsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/investments': {
-      id: '/investments'
-      path: '/investments'
-      fullPath: '/investments'
-      preLoaderRoute: typeof InvestmentsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/incomes': {
-      id: '/incomes'
-      path: '/incomes'
-      fullPath: '/incomes'
-      preLoaderRoute: typeof IncomesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/expenses': {
-      id: '/expenses'
-      path: '/expenses'
-      fullPath: '/expenses'
-      preLoaderRoute: typeof ExpensesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/essentials': {
-      id: '/essentials'
-      path: '/essentials'
-      fullPath: '/essentials'
-      preLoaderRoute: typeof EssentialsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/': {
-      id: '/'
+    '/__app/': {
+      id: '/__app/'
       path: '/'
       fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+      preLoaderRoute: typeof _appIndexRouteImport
+      parentRoute: typeof _appRoute
+    }
+    '/auth/sign-in': {
+      id: '/auth/sign-in'
+      path: '/auth/sign-in'
+      fullPath: '/auth/sign-in'
+      preLoaderRoute: typeof AuthSignInRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/budget-categories/$id': {
-      id: '/budget-categories/$id'
+    '/__app/payments': {
+      id: '/__app/payments'
+      path: '/payments'
+      fullPath: '/payments'
+      preLoaderRoute: typeof _appPaymentsRouteImport
+      parentRoute: typeof _appRoute
+    }
+    '/__app/non-essentials': {
+      id: '/__app/non-essentials'
+      path: '/non-essentials'
+      fullPath: '/non-essentials'
+      preLoaderRoute: typeof _appNonEssentialsRouteImport
+      parentRoute: typeof _appRoute
+    }
+    '/__app/investments': {
+      id: '/__app/investments'
+      path: '/investments'
+      fullPath: '/investments'
+      preLoaderRoute: typeof _appInvestmentsRouteImport
+      parentRoute: typeof _appRoute
+    }
+    '/__app/incomes': {
+      id: '/__app/incomes'
+      path: '/incomes'
+      fullPath: '/incomes'
+      preLoaderRoute: typeof _appIncomesRouteImport
+      parentRoute: typeof _appRoute
+    }
+    '/__app/expenses': {
+      id: '/__app/expenses'
+      path: '/expenses'
+      fullPath: '/expenses'
+      preLoaderRoute: typeof _appExpensesRouteImport
+      parentRoute: typeof _appRoute
+    }
+    '/__app/essentials': {
+      id: '/__app/essentials'
+      path: '/essentials'
+      fullPath: '/essentials'
+      preLoaderRoute: typeof _appEssentialsRouteImport
+      parentRoute: typeof _appRoute
+    }
+    '/__app/budget-categories/$id': {
+      id: '/__app/budget-categories/$id'
       path: '/budget-categories/$id'
       fullPath: '/budget-categories/$id'
-      preLoaderRoute: typeof BudgetCategoriesIdRouteImport
-      parentRoute: typeof rootRouteImport
+      preLoaderRoute: typeof _appBudgetCategoriesIdRouteImport
+      parentRoute: typeof _appRoute
     }
   }
 }
 
+interface _appRouteChildren {
+  _appEssentialsRoute: typeof _appEssentialsRoute
+  _appExpensesRoute: typeof _appExpensesRoute
+  _appIncomesRoute: typeof _appIncomesRoute
+  _appInvestmentsRoute: typeof _appInvestmentsRoute
+  _appNonEssentialsRoute: typeof _appNonEssentialsRoute
+  _appPaymentsRoute: typeof _appPaymentsRoute
+  _appIndexRoute: typeof _appIndexRoute
+  _appBudgetCategoriesIdRoute: typeof _appBudgetCategoriesIdRoute
+}
+
+const _appRouteChildren: _appRouteChildren = {
+  _appEssentialsRoute: _appEssentialsRoute,
+  _appExpensesRoute: _appExpensesRoute,
+  _appIncomesRoute: _appIncomesRoute,
+  _appInvestmentsRoute: _appInvestmentsRoute,
+  _appNonEssentialsRoute: _appNonEssentialsRoute,
+  _appPaymentsRoute: _appPaymentsRoute,
+  _appIndexRoute: _appIndexRoute,
+  _appBudgetCategoriesIdRoute: _appBudgetCategoriesIdRoute,
+}
+
+const _appRouteWithChildren = _appRoute._addFileChildren(_appRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
-  IndexRoute: IndexRoute,
-  EssentialsRoute: EssentialsRoute,
-  ExpensesRoute: ExpensesRoute,
-  IncomesRoute: IncomesRoute,
-  InvestmentsRoute: InvestmentsRoute,
-  NonEssentialsRoute: NonEssentialsRoute,
-  PaymentsRoute: PaymentsRoute,
-  BudgetCategoriesIdRoute: BudgetCategoriesIdRoute,
+  _appRoute: _appRouteWithChildren,
+  AuthSignInRoute: AuthSignInRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
