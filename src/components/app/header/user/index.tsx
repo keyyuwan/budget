@@ -7,6 +7,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { useNavigate } from "@tanstack/react-router";
 import {
   HelpCircleIcon,
   LogOutIcon,
@@ -15,6 +16,12 @@ import {
 } from "lucide-react";
 
 export function User() {
+  const navigate = useNavigate();
+
+  function handleSignOut() {
+    navigate({ to: "/auth/sign-in" });
+  }
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>
@@ -43,7 +50,7 @@ export function User() {
           </DropdownMenuItem>
           <DropdownMenuSeparator />
         </DropdownMenuGroup>
-        <DropdownMenuItem className="text-destructive">
+        <DropdownMenuItem className="text-destructive" onClick={handleSignOut}>
           <LogOutIcon className="size-4 text-destructive" />
           Sair
         </DropdownMenuItem>
