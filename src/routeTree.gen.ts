@@ -10,7 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as PaymentsRouteImport } from './routes/payments'
-import { Route as NonEssencialsRouteImport } from './routes/non-essencials'
+import { Route as NonEssentialsRouteImport } from './routes/non-essentials'
 import { Route as InvestmentsRouteImport } from './routes/investments'
 import { Route as IncomesRouteImport } from './routes/incomes'
 import { Route as ExpensesRouteImport } from './routes/expenses'
@@ -23,9 +23,9 @@ const PaymentsRoute = PaymentsRouteImport.update({
   path: '/payments',
   getParentRoute: () => rootRouteImport,
 } as any)
-const NonEssencialsRoute = NonEssencialsRouteImport.update({
-  id: '/non-essencials',
-  path: '/non-essencials',
+const NonEssentialsRoute = NonEssentialsRouteImport.update({
+  id: '/non-essentials',
+  path: '/non-essentials',
   getParentRoute: () => rootRouteImport,
 } as any)
 const InvestmentsRoute = InvestmentsRouteImport.update({
@@ -65,7 +65,7 @@ export interface FileRoutesByFullPath {
   '/expenses': typeof ExpensesRoute
   '/incomes': typeof IncomesRoute
   '/investments': typeof InvestmentsRoute
-  '/non-essencials': typeof NonEssencialsRoute
+  '/non-essentials': typeof NonEssentialsRoute
   '/payments': typeof PaymentsRoute
   '/budget-categories/$id': typeof BudgetCategoriesIdRoute
 }
@@ -75,7 +75,7 @@ export interface FileRoutesByTo {
   '/expenses': typeof ExpensesRoute
   '/incomes': typeof IncomesRoute
   '/investments': typeof InvestmentsRoute
-  '/non-essencials': typeof NonEssencialsRoute
+  '/non-essentials': typeof NonEssentialsRoute
   '/payments': typeof PaymentsRoute
   '/budget-categories/$id': typeof BudgetCategoriesIdRoute
 }
@@ -86,7 +86,7 @@ export interface FileRoutesById {
   '/expenses': typeof ExpensesRoute
   '/incomes': typeof IncomesRoute
   '/investments': typeof InvestmentsRoute
-  '/non-essencials': typeof NonEssencialsRoute
+  '/non-essentials': typeof NonEssentialsRoute
   '/payments': typeof PaymentsRoute
   '/budget-categories/$id': typeof BudgetCategoriesIdRoute
 }
@@ -98,7 +98,7 @@ export interface FileRouteTypes {
     | '/expenses'
     | '/incomes'
     | '/investments'
-    | '/non-essencials'
+    | '/non-essentials'
     | '/payments'
     | '/budget-categories/$id'
   fileRoutesByTo: FileRoutesByTo
@@ -108,7 +108,7 @@ export interface FileRouteTypes {
     | '/expenses'
     | '/incomes'
     | '/investments'
-    | '/non-essencials'
+    | '/non-essentials'
     | '/payments'
     | '/budget-categories/$id'
   id:
@@ -118,7 +118,7 @@ export interface FileRouteTypes {
     | '/expenses'
     | '/incomes'
     | '/investments'
-    | '/non-essencials'
+    | '/non-essentials'
     | '/payments'
     | '/budget-categories/$id'
   fileRoutesById: FileRoutesById
@@ -129,7 +129,7 @@ export interface RootRouteChildren {
   ExpensesRoute: typeof ExpensesRoute
   IncomesRoute: typeof IncomesRoute
   InvestmentsRoute: typeof InvestmentsRoute
-  NonEssencialsRoute: typeof NonEssencialsRoute
+  NonEssentialsRoute: typeof NonEssentialsRoute
   PaymentsRoute: typeof PaymentsRoute
   BudgetCategoriesIdRoute: typeof BudgetCategoriesIdRoute
 }
@@ -143,11 +143,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PaymentsRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/non-essencials': {
-      id: '/non-essencials'
-      path: '/non-essencials'
-      fullPath: '/non-essencials'
-      preLoaderRoute: typeof NonEssencialsRouteImport
+    '/non-essentials': {
+      id: '/non-essentials'
+      path: '/non-essentials'
+      fullPath: '/non-essentials'
+      preLoaderRoute: typeof NonEssentialsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/investments': {
@@ -201,7 +201,7 @@ const rootRouteChildren: RootRouteChildren = {
   ExpensesRoute: ExpensesRoute,
   IncomesRoute: IncomesRoute,
   InvestmentsRoute: InvestmentsRoute,
-  NonEssencialsRoute: NonEssencialsRoute,
+  NonEssentialsRoute: NonEssentialsRoute,
   PaymentsRoute: PaymentsRoute,
   BudgetCategoriesIdRoute: BudgetCategoriesIdRoute,
 }

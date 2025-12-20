@@ -68,6 +68,7 @@ function RouteComponent() {
                 iconClassName="text-sky-700"
                 iconWrapperClassName="bg-sky-700/10"
                 categoryId="1"
+                href="/essentials"
               />
               <BudgetCategoryCard
                 title="Investimentos"
@@ -77,6 +78,7 @@ function RouteComponent() {
                 iconClassName="text-emerald-500"
                 iconWrapperClassName="bg-emerald-500/10"
                 categoryId="2"
+                href="/investments"
               />
               <BudgetCategoryCard
                 title="Não Essenciais"
@@ -85,6 +87,7 @@ function RouteComponent() {
                 icon={ShoppingBag}
                 iconWrapperClassName="bg-zinc-800/10"
                 categoryId="3"
+                href="/non-essentials"
               />
             </div>
           </div>
