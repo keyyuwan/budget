@@ -10,16 +10,18 @@ import {
   BanknoteArrowDownIcon,
   BanknoteArrowUpIcon,
   ChartPieIcon,
-  CreditCardIcon,
+  HouseHeartIcon,
   HouseIcon,
   MenuIcon,
   MessageCircleIcon,
+  ReceiptIcon,
   ShoppingBag,
   XIcon,
 } from "lucide-react";
 import { NavigationLink } from "./navigation-link";
 import { Separator } from "@/components/ui/separator";
 import { useState } from "react";
+import { Logo } from "../../logo";
 
 export function NavigationMenu() {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,22 +33,26 @@ export function NavigationMenu() {
   return (
     <Drawer direction="left" open={isOpen} onOpenChange={setIsOpen}>
       <DrawerTrigger asChild>
-        <Button variant="outline" size="icon" aria-label="Menu">
-          <MenuIcon />
+        <Button variant="ghost" size="icon" aria-label="Menu">
+          <MenuIcon
+            className="size-5 text-muted-foreground"
+            strokeWidth={1.5}
+          />
         </Button>
       </DrawerTrigger>
-      <DrawerContent className="w-60">
-        <DrawerHeader className="flex flex-row items-center justify-between border-b">
-          <span className="text-primary">app logo.</span>
+      <DrawerContent className="w-60 border-t-0 border-b-0">
+        <DrawerHeader className="flex flex-row items-center justify-between pb-2">
+          <Logo />
           <Button
             variant="ghost"
             size="icon"
             aria-label="Close"
             onClick={handleCloseMenu}
           >
-            <XIcon />
+            <XIcon className="size-5 text-muted-foreground" strokeWidth={1.5} />
           </Button>
         </DrawerHeader>
+
         <nav className="flex flex-col gap-2 p-4">
           <NavigationLink
             icon={HouseIcon}
@@ -67,34 +73,40 @@ export function NavigationMenu() {
             onClick={handleCloseMenu}
           />
           <NavigationLink
-            icon={CreditCardIcon}
-            label="Pagamentos"
+            icon={ReceiptIcon}
+            label="Contas"
             href="/payments"
             onClick={handleCloseMenu}
           />
         </nav>
-        <Separator />
-        <nav className="flex flex-col gap-2 p-4">
-          <span className="text-sm font-medium">Orçamento</span>
 
-          <NavigationLink
-            icon={HouseIcon}
-            label="Essenciais"
-            href="/essentials"
-            onClick={handleCloseMenu}
-          />
-          <NavigationLink
-            icon={ChartPieIcon}
-            label="Investimentos"
-            href="/investments"
-            onClick={handleCloseMenu}
-          />
-          <NavigationLink
-            icon={ShoppingBag}
-            label="Não Essenciais"
-            href="/non-essencials"
-            onClick={handleCloseMenu}
-          />
+        <Separator />
+
+        <nav className="flex flex-col gap-4 px-4 py-5">
+          <span className="text-xs font-semibold tracking-tight text-muted-foreground uppercase">
+            Orçamento
+          </span>
+
+          <div className="flex flex-col gap-2">
+            <NavigationLink
+              icon={HouseHeartIcon}
+              label="Essenciais"
+              href="/essentials"
+              onClick={handleCloseMenu}
+            />
+            <NavigationLink
+              icon={ChartPieIcon}
+              label="Investimentos"
+              href="/investments"
+              onClick={handleCloseMenu}
+            />
+            <NavigationLink
+              icon={ShoppingBag}
+              label="Não Essenciais"
+              href="/non-essentials"
+              onClick={handleCloseMenu}
+            />
+          </div>
         </nav>
         <DrawerFooter className="flex flex-col gap-3">
           <span className="text-xs text-muted-foreground">
