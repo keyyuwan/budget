@@ -13,8 +13,8 @@ function RouteComponent() {
     <Container>
       <div className="relative flex flex-1 flex-col gap-4">
         <div className="flex flex-col gap-1">
-          <h1 className="text-2xl font-bold">Pagamentos</h1>
-          <p className="text-sm leading-relaxed text-muted-foreground">
+          <h1 className="text-xl font-bold">Pagamentos</h1>
+          <p className="text-sm text-muted-foreground">
             Acompanhe o que já foi pago, o que ainda falta e as próximas datas
             de vencimento.
           </p>
@@ -29,7 +29,7 @@ function RouteComponent() {
             value="next-payments"
             className="mt-2 flex flex-col gap-5"
           >
-            <span className="text-sm text-muted-foreground">
+            <span className="text-xs text-muted-foreground">
               Você tem <strong>5</strong> contas a vencer este mês.
             </span>
 

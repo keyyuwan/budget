@@ -3,8 +3,8 @@ import { Container } from "@/components/app/container";
 import { FinancialSummaryCard } from "@/components/app/financial-summary-card";
 import { createFileRoute } from "@tanstack/react-router";
 import {
+  ArrowDownIcon,
   ArrowDownNarrowWideIcon,
-  BanknoteArrowDownIcon,
   BrainIcon,
   CarIcon,
   ChartNoAxesColumnIncreasingIcon,
@@ -12,7 +12,7 @@ import {
   FileTextIcon,
   HamburgerIcon,
   HouseIcon,
-  ReceiptTextIcon,
+  ReceiptIcon,
   ShoppingBagIcon,
   ShoppingCartIcon,
 } from "lucide-react";
@@ -25,34 +25,41 @@ function RouteComponent() {
   return (
     <Container>
       <div className="relative flex flex-1 flex-col gap-4">
-        <h1 className="text-2xl font-bold">Saídas</h1>
+        <div className="flex flex-col gap-1">
+          <h1 className="text-xl font-bold">Saídas</h1>
+          <p className="text-sm text-muted-foreground">
+            Acompanhe suas saídas, valores a pagar e os gastos previstos.
+          </p>
+        </div>
 
         <div className="flex flex-col gap-2">
           <FinancialSummaryCard
             title="Saídas"
             amount={15_500.34}
-            icon={BanknoteArrowDownIcon}
+            icon={ArrowDownIcon}
             iconClassName="text-destructive"
+            iconWrapperClassName="bg-destructive/10"
           />
 
           <FinancialSummaryCard
             title="A pagar"
             amount={5_500.34}
-            icon={ReceiptTextIcon}
+            icon={ReceiptIcon}
             iconClassName="text-warning"
+            iconWrapperClassName="bg-warning/10"
           />
 
           <FinancialSummaryCard
-            title="Total previsto"
+            title="Gastos previstos"
             amount={5_500.34}
             icon={ArrowDownNarrowWideIcon}
           />
         </div>
 
-        <div className="flex flex-col gap-1">
-          <h2 className="text-xl font-medium">Essenciais</h2>
+        <div className="mt-2 flex flex-col gap-1">
+          <h2 className="font-medium text-muted-foreground">Essenciais</h2>
 
-          <div className="scrollbar-none -mx-5 flex gap-2.5 overflow-x-auto px-5 py-2">
+          <div className="scrollbar-none -mx-5 flex gap-2 overflow-x-auto px-5 py-2">
             <BudgetCategoryCard
               title="Moradia"
               pendingAmount={6_000}
@@ -80,10 +87,10 @@ function RouteComponent() {
           </div>
         </div>
 
-        <div className="flex flex-col gap-1">
-          <h2 className="text-xl font-medium">Investimentos</h2>
+        <div className="mt-2 flex flex-col gap-1">
+          <h2 className="font-medium text-muted-foreground">Investimentos</h2>
 
-          <div className="scrollbar-none -mx-5 flex gap-2.5 overflow-x-auto px-5 py-2">
+          <div className="scrollbar-none -mx-5 flex gap-2 overflow-x-auto px-5 py-2">
             <BudgetCategoryCard
               title="Qualidade"
               pendingAmount={6_000}
@@ -111,10 +118,10 @@ function RouteComponent() {
           </div>
         </div>
 
-        <div className="flex flex-col gap-1">
-          <h2 className="text-xl font-medium">Não Essenciais</h2>
+        <div className="mt-2 flex flex-col gap-1">
+          <h2 className="font-medium text-muted-foreground">Não Essenciais</h2>
 
-          <div className="scrollbar-none -mx-5 flex gap-2.5 overflow-x-auto px-5 py-2">
+          <div className="scrollbar-none -mx-5 flex gap-2 overflow-x-auto px-5 py-2">
             <BudgetCategoryCard
               title="Transporte"
               pendingAmount={6_000}

@@ -44,14 +44,14 @@ export function CreateTransactionFixedButton({
       <DropdownMenu open={isOpen} onOpenChange={setIsOpen}>
         <DropdownMenuTrigger asChild>
           <Button
-            className="fixed right-5 bottom-5 size-14 rounded-full text-primary-foreground shadow-lg lg:hidden"
+            className="fixed right-5 bottom-5 size-13 rounded-full text-primary-foreground shadow-lg lg:hidden"
             size="icon"
             aria-label="Add transaction"
           >
             {isOpen ? (
-              <XIcon className="size-7" strokeWidth={1.5} />
+              <XIcon className="size-6.5" strokeWidth={1.5} />
             ) : (
-              <PlusIcon className="size-7" strokeWidth={1.5} />
+              <PlusIcon className="size-6.5" strokeWidth={1.5} />
             )}
           </Button>
         </DropdownMenuTrigger>

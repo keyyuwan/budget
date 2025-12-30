@@ -24,7 +24,7 @@ function RouteComponent() {
         <span className="text-sm text-muted-foreground">Boa tarde, Key</span>
         <h1 className="text-xl font-bold">Dezembro 2025</h1>
 
-        <div className="mt-2 flex flex-col gap-2 pt-2">
+        <div className="mt-4 flex flex-col gap-2">
           <div className="scrollbar-none -mx-5 flex gap-2 overflow-x-auto px-5">
             <PaymentReminderCard />
             <PaymentReminderCard />
@@ -59,7 +59,9 @@ function RouteComponent() {
           </div>
 
           <div className="mt-5 flex flex-col gap-1">
-            <h2 className="text-lg font-semibold">Orçamento</h2>
+            <h2 className="font-medium text-muted-foreground">
+              Distribuição do orçamento
+            </h2>
             <div className="scrollbar-none -mx-5 flex gap-2 overflow-x-auto px-5 py-2">
               <BudgetCategoryCard
                 title="Essenciais"

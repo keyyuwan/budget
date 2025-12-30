@@ -8,11 +8,11 @@ import { type LucideIcon } from "lucide-react";
 interface BudgetCategoryCardProps {
   categoryId: string;
   title: string;
-  description: string;
+  description?: string;
   pendingAmount: number;
   totalAmount: number;
   icon: LucideIcon;
-  percentageFromBudget: number;
+  percentageFromBudget?: number;
   href?: LinkProps["to"];
   cardClassName?: string;
   iconWrapperClassName?: string;
@@ -58,10 +58,16 @@ export function BudgetCategoryCard({
               <Icon className={cn("size-4.5", iconClassName)} />
             </div>
             <span className="text-sm font-medium">{title}</span>
-            <span className="text-xs text-muted-foreground">{description}</span>
+            {description && (
+              <span className="text-xs text-muted-foreground">
+                {description}
+              </span>
+            )}
           </div>
 
-          <Badge variant="secondary">{percentageFromBudget}%</Badge>
+          {percentageFromBudget && (
+            <Badge variant="secondary">{percentageFromBudget}%</Badge>
+          )}
         </CardHeader>
         <CardContent className="flex flex-col gap-2">
           <Progress value={progress} />
