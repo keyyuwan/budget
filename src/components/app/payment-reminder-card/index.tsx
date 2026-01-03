@@ -7,12 +7,16 @@ export function PaymentReminderCard() {
     <Link to="/payments">
       <Card className="w-44 shrink-0">
         <CardHeader className="gap-4">
-          <ReceiptIcon className="size-5" strokeWidth={1.5} />
+          <div className="flex size-8 items-center justify-center rounded-full bg-primary/10">
+            <ReceiptIcon className="size-4 text-primary" strokeWidth={1.5} />
+          </div>
 
           <span>
             <span className="block text-xs font-medium">
               Lembrete de conta: <br />{" "}
-              <span className="text-muted-foreground">Luz em 2 dias</span>
+              <span className="font-normal text-muted-foreground">
+                Luz em 2 dias
+              </span>
             </span>
           </span>
         </CardHeader>

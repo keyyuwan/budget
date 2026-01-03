@@ -10,6 +10,7 @@ interface FinancialSummaryCardProps {
   icon: LucideIcon;
   iconClassName?: string;
   iconWrapperClassName?: string;
+  monetaryAmountClassName?: string;
   href?: LinkProps["to"];
 }
 
@@ -19,6 +20,7 @@ export function FinancialSummaryCard({
   icon: Icon,
   iconClassName,
   iconWrapperClassName,
+  monetaryAmountClassName,
   href,
 }: FinancialSummaryCardProps) {
   const currencyAmount = new Intl.NumberFormat("pt-BR", {
@@ -43,8 +45,10 @@ export function FinancialSummaryCard({
               />
             </div>
             <div className="flex flex-col">
-              <span className="text-xs text-muted-foreground">{title}</span>
-              <span className="text-lg font-medium">{currencyAmount}</span>
+              <span className="text-xs">{title}</span>
+              <span className={cn("text-lg", monetaryAmountClassName)}>
+                {currencyAmount}
+              </span>
             </div>
           </div>
 

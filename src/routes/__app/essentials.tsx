@@ -1,13 +1,9 @@
 import { BudgetCategoryCard } from "@/components/app/budget-category-card";
+import { ChartBarLabelCustom } from "@/components/app/charts/chart-bar-label-custom";
 import { Container } from "@/components/app/container";
-import { Progress } from "@/components/ui/progress";
+import { Badge } from "@/components/ui/badge";
 import { createFileRoute } from "@tanstack/react-router";
-import {
-  FileTextIcon,
-  HouseIcon,
-  PencilIcon,
-  ShoppingCartIcon,
-} from "lucide-react";
+import { FileTextIcon, HouseIcon, ShoppingCartIcon } from "lucide-react";
 
 export const Route = createFileRoute("/__app/essentials")({
   component: RouteComponent,
@@ -17,36 +13,30 @@ function RouteComponent() {
   return (
     <div className="flex flex-col">
       <div className="rounded-b-3xl border-b bg-card">
-        <Container className="flex items-start justify-between">
-          <div className="flex w-full items-start gap-2.5">
-            <div className="flex size-10 items-center justify-center rounded-full bg-sky-700/10">
-              <HouseIcon className="size-5 text-sky-700" />
-            </div>
-
-            <div className="flex flex-1 flex-col gap-1">
-              <h1 className="text-2xl font-medium">Essenciais</h1>
-              <span className="text-sm text-muted-foreground">
-                50% do orçamento
-              </span>
-              <div className="flex flex-1 flex-col gap-2">
-                <span className="text-right text-xs text-muted-foreground">
-                  90%
-                </span>
-                <Progress value={90} />
-                <div className="flex items-center justify-between">
-                  <span className="text-xxs text-muted-foreground">
-                    R$ 90,00
-                  </span>
-                  <span className="text-xxs text-muted-foreground">
-                    R$ 100,00
-                  </span>
-                </div>
-              </div>
-            </div>
+        <Container className="flex flex-1 flex-col gap-2">
+          <div className="flex flex-col gap-3">
+            <Badge variant="secondary" className="text-muted-foreground">
+              <span className="font-bold text-primary">50</span> / 30 / 20
+            </Badge>
+            <h1 className="text-xl leading-5 font-bold">Essenciais</h1>
           </div>
-          <button aria-label="Editar" className="text-muted-foreground">
-            <PencilIcon className="size-4" />
-          </button>
+
+          <span className="text-sm text-muted-foreground">
+            Moradia, alimentação, contas e saúde.
+          </span>
+
+          {/* <div className="mt-4 flex flex-1 flex-col gap-2">
+            <div className="flex items-center justify-end gap-1 text-xxs text-muted-foreground">
+              <span>R$ 90,00 gastos</span>
+              <span>de</span>
+              <span className="font-bold">R$ 100,00</span>
+            </div>
+            <Progress value={90} />
+          </div> */}
+
+          <div className="mt-2">
+            <ChartBarLabelCustom />
+          </div>
         </Container>
       </div>
 

@@ -21,48 +21,67 @@ function RouteComponent() {
   return (
     <Container>
       <div className="relative flex flex-1 flex-col">
-        <span className="text-sm text-muted-foreground">Boa tarde, Key</span>
-        <h1 className="text-xl font-bold">Dezembro 2025</h1>
+        <div className="flex flex-col gap-1">
+          <span className="text-xs text-muted-foreground">
+            👋 Boa tarde, Key
+          </span>
+          <h1 className="text-xl font-bold">Dezembro 2025</h1>
+        </div>
 
-        <div className="mt-4 flex flex-col gap-2">
-          <div className="scrollbar-none -mx-5 flex gap-2 overflow-x-auto px-5">
-            <PaymentReminderCard />
-            <PaymentReminderCard />
-            <PaymentReminderCard />
-          </div>
+        <div className="mt-5 flex flex-col gap-5">
+          <div className="flex flex-col gap-2.5">
+            <h2 className="text-sm font-medium text-muted-foreground">
+              Lembretes
+            </h2>
 
-          <div className="flex flex-col gap-1">
-            {/* <h2 className="text-xl font-medium">Balanço</h2> */}
-            <div className="flex flex-col gap-2">
-              <FinancialSummaryCard
-                title="Entradas"
-                amount={15_500.34}
-                icon={ArrowUpIcon}
-                iconClassName="text-primary"
-                iconWrapperClassName="bg-primary/10"
-                href="/incomes"
-              />
-              <FinancialSummaryCard
-                title="Saídas"
-                amount={10_000.0}
-                icon={ArrowDownIcon}
-                iconClassName="text-destructive"
-                iconWrapperClassName="bg-destructive/10"
-                href="/expenses"
-              />
-              <FinancialSummaryCard
-                title="Disponível"
-                amount={500.34}
-                icon={DollarSignIcon}
-              />
+            <div className="scrollbar-none -mx-5 flex gap-2.5 overflow-x-auto px-5">
+              <PaymentReminderCard />
+              <PaymentReminderCard />
+              <PaymentReminderCard />
             </div>
           </div>
 
-          <div className="mt-5 flex flex-col gap-1">
-            <h2 className="font-medium text-muted-foreground">
+          <div className="flex flex-col gap-2.5">
+            <h2 className="text-sm font-medium text-muted-foreground">
+              Balanço
+            </h2>
+
+            <div className="flex flex-col gap-1">
+              {/* <h2 className="text-xl font-medium">Balanço</h2> */}
+              <div className="flex flex-col gap-2.5">
+                <FinancialSummaryCard
+                  title="Entradas"
+                  amount={15_500.34}
+                  icon={ArrowUpIcon}
+                  iconClassName="text-primary"
+                  iconWrapperClassName="bg-primary/10"
+                  monetaryAmountClassName="text-primary"
+                  href="/incomes"
+                />
+                <FinancialSummaryCard
+                  title="Saídas"
+                  amount={10_000.0}
+                  icon={ArrowDownIcon}
+                  iconClassName="text-destructive"
+                  iconWrapperClassName="bg-destructive/10"
+                  monetaryAmountClassName="text-destructive"
+                  href="/expenses"
+                />
+                <FinancialSummaryCard
+                  title="Disponível"
+                  amount={500.34}
+                  icon={DollarSignIcon}
+                />
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-2.5 flex flex-col gap-2.5">
+            <h2 className="text-sm font-medium text-muted-foreground">
               Distribuição do orçamento
             </h2>
-            <div className="scrollbar-none -mx-5 flex gap-2 overflow-x-auto px-5 py-2">
+
+            <div className="scrollbar-none -mx-5 flex gap-2.5 overflow-x-auto px-5">
               <BudgetCategoryCard
                 title="Essenciais"
                 description="Moradia, alimentação, contas e saúde."

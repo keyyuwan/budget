@@ -55,7 +55,10 @@ export function BudgetCategoryCard({
                 iconWrapperClassName,
               )}
             >
-              <Icon className={cn("size-4.5", iconClassName)} />
+              <Icon
+                className={cn("size-4.5", iconClassName)}
+                strokeWidth={1.5}
+              />
             </div>
             <span className="text-sm font-medium">{title}</span>
             {description && (
@@ -66,19 +69,42 @@ export function BudgetCategoryCard({
           </div>
 
           {percentageFromBudget && (
-            <Badge variant="secondary">{percentageFromBudget}%</Badge>
+            <>
+              {percentageFromBudget === 50 && (
+                <Badge variant="secondary" className="text-muted-foreground">
+                  <span className="font-bold text-primary">
+                    {percentageFromBudget}
+                  </span>{" "}
+                  / 30 / 20
+                </Badge>
+              )}
+              {percentageFromBudget === 30 && (
+                <Badge variant="secondary" className="text-muted-foreground">
+                  50 /
+                  <span className="font-bold text-primary">
+                    {percentageFromBudget}
+                  </span>{" "}
+                  / 20
+                </Badge>
+              )}
+              {percentageFromBudget === 20 && (
+                <Badge variant="secondary" className="text-muted-foreground">
+                  50 / 30 /
+                  <span className="font-bold text-primary">
+                    {percentageFromBudget}
+                  </span>
+                </Badge>
+              )}
+            </>
           )}
         </CardHeader>
-        <CardContent className="flex flex-col gap-2">
-          <Progress value={progress} />
-          <div className="flex items-center justify-between">
-            <span className="text-xxs text-muted-foreground">
-              {pendingAmountCurrency}
-            </span>
-            <span className="text-xxs text-muted-foreground">
-              {totalAmountCurrency}
-            </span>
+
+        <CardContent className="flex flex-col gap-1.5">
+          <div className="flex items-center justify-between text-xxs text-muted-foreground">
+            <span>{pendingAmountCurrency}</span>
+            <span>{totalAmountCurrency}</span>
           </div>
+          <Progress value={progress} className="h-1.5" />
         </CardContent>
       </Card>
     </Link>
