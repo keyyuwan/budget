@@ -1,7 +1,6 @@
 import { BudgetCategoryCard } from "@/components/app/budget-category-card";
 import { Container } from "@/components/app/container";
 import { FinancialSummaryCard } from "@/components/app/financial-summary-card";
-import { Separator } from "@/components/ui/separator";
 import { createFileRoute } from "@tanstack/react-router";
 import {
   ArrowDownIcon,
@@ -33,8 +32,6 @@ function RouteComponent() {
           </p>
         </div>
 
-        <Separator />
-
         <div className="flex flex-col gap-2.5">
           <FinancialSummaryCard
             title="Saídas"
@@ -60,102 +57,104 @@ function RouteComponent() {
           />
         </div>
 
-        <div className="mt-2 flex flex-col gap-2.5">
-          <h2 className="text-sm font-medium text-muted-foreground">
-            Essenciais
-          </h2>
+        <div className="mt-2 space-y-6">
+          <div className="flex flex-col gap-2.5">
+            <h2 className="text-sm font-medium text-muted-foreground">
+              Essenciais
+            </h2>
 
-          <div className="scrollbar-none -mx-5 flex gap-2.5 overflow-x-auto px-5">
-            <BudgetCategoryCard
-              title="Moradia"
-              pendingAmount={6_000}
-              totalAmount={12_000}
-              icon={HouseIcon}
-              iconWrapperClassName="bg-zinc-400/10"
-              categoryId="1"
-            />
-            <BudgetCategoryCard
-              title="Mercado"
-              pendingAmount={6_000}
-              totalAmount={12_000}
-              icon={ShoppingCartIcon}
-              iconWrapperClassName="bg-zinc-400/10"
-              categoryId="2"
-            />
-            <BudgetCategoryCard
-              title="Contabilidade"
-              pendingAmount={6_000}
-              totalAmount={12_000}
-              icon={FileTextIcon}
-              iconWrapperClassName="bg-zinc-400/10"
-              categoryId="3"
-            />
+            <div className="scrollbar-none -mx-5 flex gap-2.5 overflow-x-auto px-5">
+              <BudgetCategoryCard
+                title="Moradia"
+                pendingAmount={6_000}
+                totalAmount={12_000}
+                icon={HouseIcon}
+                iconWrapperClassName="bg-zinc-400/10"
+                categoryId="1"
+              />
+              <BudgetCategoryCard
+                title="Mercado"
+                pendingAmount={6_000}
+                totalAmount={12_000}
+                icon={ShoppingCartIcon}
+                iconWrapperClassName="bg-zinc-400/10"
+                categoryId="2"
+              />
+              <BudgetCategoryCard
+                title="Contabilidade"
+                pendingAmount={6_000}
+                totalAmount={12_000}
+                icon={FileTextIcon}
+                iconWrapperClassName="bg-zinc-400/10"
+                categoryId="3"
+              />
+            </div>
           </div>
-        </div>
 
-        <div className="mt-2 flex flex-col gap-2.5">
-          <h2 className="text-sm font-medium text-muted-foreground">
-            Investimentos
-          </h2>
+          <div className="flex flex-col gap-2.5">
+            <h2 className="text-sm font-medium text-muted-foreground">
+              Investimentos
+            </h2>
 
-          <div className="scrollbar-none -mx-5 flex gap-2.5 overflow-x-auto px-5">
-            <BudgetCategoryCard
-              title="Qualidade"
-              pendingAmount={6_000}
-              totalAmount={12_000}
-              icon={CircleFadingArrowUpIcon}
-              iconWrapperClassName="bg-zinc-400/10"
-              categoryId="4"
-            />
-            <BudgetCategoryCard
-              title="Educação"
-              pendingAmount={6_000}
-              totalAmount={12_000}
-              icon={BrainIcon}
-              iconWrapperClassName="bg-zinc-400/10"
-              categoryId="5"
-            />
-            <BudgetCategoryCard
-              title="Renda Fixa"
-              pendingAmount={6_000}
-              totalAmount={12_000}
-              icon={ChartNoAxesColumnIncreasingIcon}
-              iconWrapperClassName="bg-zinc-400/10"
-              categoryId="6"
-            />
+            <div className="scrollbar-none -mx-5 flex gap-2.5 overflow-x-auto px-5">
+              <BudgetCategoryCard
+                title="Qualidade"
+                pendingAmount={6_000}
+                totalAmount={12_000}
+                icon={CircleFadingArrowUpIcon}
+                iconWrapperClassName="bg-zinc-400/10"
+                categoryId="4"
+              />
+              <BudgetCategoryCard
+                title="Educação"
+                pendingAmount={6_000}
+                totalAmount={12_000}
+                icon={BrainIcon}
+                iconWrapperClassName="bg-zinc-400/10"
+                categoryId="5"
+              />
+              <BudgetCategoryCard
+                title="Renda Fixa"
+                pendingAmount={6_000}
+                totalAmount={12_000}
+                icon={ChartNoAxesColumnIncreasingIcon}
+                iconWrapperClassName="bg-zinc-400/10"
+                categoryId="6"
+              />
+            </div>
           </div>
-        </div>
 
-        <div className="mt-2 flex flex-col gap-2.5">
-          <h2 className="text-sm font-medium text-muted-foreground">
-            Não essenciais
-          </h2>
+          <div className="flex flex-col gap-2.5">
+            <h2 className="text-sm font-medium text-muted-foreground">
+              Não essenciais
+            </h2>
 
-          <div className="scrollbar-none -mx-5 flex gap-2.5 overflow-x-auto px-5">
-            <BudgetCategoryCard
-              title="Transporte"
-              pendingAmount={6_000}
-              totalAmount={12_000}
-              icon={CarIcon}
-              iconWrapperClassName="bg-zinc-400/10"
-              categoryId="7"
-            />
-            <BudgetCategoryCard
-              title="Alimentação"
-              pendingAmount={6_000}
-              totalAmount={12_000}
-              icon={HamburgerIcon}
-              iconWrapperClassName="bg-zinc-400/10"
-              categoryId="8"
-            />
-            <BudgetCategoryCard
-              title="Compras"
-              pendingAmount={6_000}
-              totalAmount={12_000}
-              icon={ShoppingBagIcon}
-              iconWrapperClassName="bg-zinc-400/10"
-              categoryId="9"
-            />
+            <div className="scrollbar-none -mx-5 flex gap-2.5 overflow-x-auto px-5">
+              <BudgetCategoryCard
+                title="Transporte"
+                pendingAmount={6_000}
+                totalAmount={12_000}
+                icon={CarIcon}
+                iconWrapperClassName="bg-zinc-400/10"
+                categoryId="7"
+              />
+              <BudgetCategoryCard
+                title="Alimentação"
+                pendingAmount={6_000}
+                totalAmount={12_000}
+                icon={HamburgerIcon}
+                iconWrapperClassName="bg-zinc-400/10"
+                categoryId="8"
+              />
+              <BudgetCategoryCard
+                title="Compras"
+                pendingAmount={6_000}
+                totalAmount={12_000}
+                icon={ShoppingBagIcon}
+                iconWrapperClassName="bg-zinc-400/10"
+                categoryId="9"
+              />
+            </div>
           </div>
         </div>
       </div>

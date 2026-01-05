@@ -59,7 +59,7 @@ export function CreateTransactionFixedButton({
           {hide !== "expense" && (
             <>
               <DropdownMenuItem
-                className="p-3"
+                className="text-destructive"
                 onClick={() => handleTransactionTypeChange("expense")}
               >
                 <div className="flex size-7.5 items-center justify-center rounded-full bg-destructive/10">
@@ -72,7 +72,7 @@ export function CreateTransactionFixedButton({
           {!hide && <DropdownMenuSeparator />}
           {hide !== "income" && (
             <DropdownMenuItem
-              className="p-3"
+              className="text-primary"
               onClick={() => handleTransactionTypeChange("income")}
             >
               <div className="flex size-7.5 items-center justify-center rounded-full bg-primary/10">

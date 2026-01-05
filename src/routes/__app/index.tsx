@@ -19,7 +19,7 @@ export const Route = createFileRoute("/__app/")({
 
 function RouteComponent() {
   return (
-    <Container>
+    <Container className="pb-24">
       <div className="relative flex flex-1 flex-col">
         <div className="flex flex-col gap-1">
           <span className="text-xs text-muted-foreground">

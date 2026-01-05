@@ -1,7 +1,7 @@
 import { BudgetCategoryCard } from "@/components/app/budget-category-card";
-import { ChartBarLabelCustom } from "@/components/app/charts/chart-bar-label-custom";
 import { Container } from "@/components/app/container";
 import { Badge } from "@/components/ui/badge";
+import { ChartBarLabelCustom } from "@/components/ui/chart-bar-label-custom";
 import { createFileRoute } from "@tanstack/react-router";
 import { FileTextIcon, HouseIcon, ShoppingCartIcon } from "lucide-react";
 
@@ -11,9 +11,9 @@ export const Route = createFileRoute("/__app/essentials")({
 
 function RouteComponent() {
   return (
-    <div className="flex flex-col">
-      <div className="rounded-b-3xl border-b bg-card">
-        <Container className="flex flex-1 flex-col gap-2">
+    <Container className="flex flex-col gap-4">
+      <div className="bg-card">
+        <div className="flex flex-1 flex-col gap-2">
           <div className="flex flex-col gap-3">
             <Badge variant="secondary" className="text-muted-foreground">
               <span className="font-bold text-primary">50</span> / 30 / 20
@@ -25,22 +25,13 @@ function RouteComponent() {
             Moradia, alimentação, contas e saúde.
           </span>
 
-          {/* <div className="mt-4 flex flex-1 flex-col gap-2">
-            <div className="flex items-center justify-end gap-1 text-xxs text-muted-foreground">
-              <span>R$ 90,00 gastos</span>
-              <span>de</span>
-              <span className="font-bold">R$ 100,00</span>
-            </div>
-            <Progress value={90} />
-          </div> */}
-
           <div className="mt-2">
             <ChartBarLabelCustom />
           </div>
-        </Container>
+        </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-2.5 p-4">
+      <div className="grid grid-cols-2 gap-2.5">
         <BudgetCategoryCard
           title="Moradia"
           pendingAmount={6_000}
@@ -69,6 +60,6 @@ function RouteComponent() {
           cardClassName="w-full"
         />
       </div>
-    </div>
+    </Container>
   );
 }

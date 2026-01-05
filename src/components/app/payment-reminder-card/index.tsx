@@ -12,7 +12,7 @@ export function PaymentReminderCard() {
           </div>
 
           <span>
-            <span className="block text-xs font-medium">
+            <span className="block text-xs font-semibold">
               Lembrete de conta: <br />{" "}
               <span className="font-normal text-muted-foreground">
                 Luz em 2 dias

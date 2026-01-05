@@ -29,12 +29,10 @@ function RouteComponent() {
             value="next-payments"
             className="mt-2 flex flex-col gap-5"
           >
-            <span className="text-xs text-muted-foreground">
-              Você tem <strong>5</strong> contas a vencer este mês.
-            </span>
-
             <div className="flex flex-col gap-2">
-              <span className="text-xs font-medium">14 de dezembro (hoje)</span>
+              <span className="text-xs font-medium text-muted-foreground">
+                14 de dezembro (hoje)
+              </span>
               <BudgetItemCard
                 icon={LightbulbIcon}
                 title="Luz"
@@ -46,7 +44,9 @@ function RouteComponent() {
             </div>
 
             <div className="flex flex-col gap-2">
-              <span className="text-xs font-medium">28 de dezembro</span>
+              <span className="text-xs font-medium text-muted-foreground">
+                28 de dezembro
+              </span>
               <BudgetItemCard
                 icon={LightbulbIcon}
                 title="Luz"

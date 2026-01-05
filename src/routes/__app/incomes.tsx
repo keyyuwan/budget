@@ -1,7 +1,6 @@
 import { BudgetCategoryCard } from "@/components/app/budget-category-card";
 import { Container } from "@/components/app/container";
 import { FinancialSummaryCard } from "@/components/app/financial-summary-card";
-import { Separator } from "@/components/ui/separator";
 import { createFileRoute } from "@tanstack/react-router";
 import {
   ArrowUpIcon,
@@ -24,8 +23,6 @@ function RouteComponent() {
             Acompanhe suas entradas, a receber e as entradas previstas.
           </p>
         </div>
-
-        <Separator />
 
         <div className="flex flex-col gap-2.5">
           <FinancialSummaryCard

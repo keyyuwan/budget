@@ -83,7 +83,7 @@ export function NavigationMenu() {
         <Separator />
 
         <nav className="flex flex-col gap-4 px-4 py-5">
-          <span className="text-xs font-semibold tracking-tight text-muted-foreground uppercase">
+          <span className="text-xs font-semibold text-muted-foreground uppercase">
             Orçamento
           </span>
 
